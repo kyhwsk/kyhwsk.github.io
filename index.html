@@ -53,6 +53,84 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-05-17T01:35:14.000Z"><a href="/2015/05/17/制作简单的图像查看器/">2015-05-17</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/17/制作简单的图像查看器/">制作简单的图像查看器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="任务目标：">任务目标：</h3><ul>
+<li>给定地址显示图像</li>
+<li>图像可拖拽</li>
+<li>图像可缩放</li>
+</ul>
+<h3 id="具体目标：">具体目标：</h3><ul>
+<li>在输入框内填入地址，地址正确图像正常显示，否则显示错误提示信息</li>
+<li>鼠标移入图像显示拖拽光标，此时可以将图像拖拽到任意位置</li>
+<li>鼠标移入图像边缘：（上下左右，四个角）可以显示不同方向光标，根据提示可以将图像在不同方向上放大缩小，拖拽和缩放同一时刻只能执行一种</li>
+<li>可以在一个页面中创建多个这样的图像查看器</li>
+</ul>
+<h3 id="实现思路">实现思路</h3><ul>
+<li>目标一：判断图像是否正常加载使用<code>onload</code> &amp; <code>onerror</code>判断</li>
+<li><p>目标二：</p>
+<ul>
+<li>拖拽使用html5原生拖拽，允许拖拽时为图像<code>draggable</code>设置为<code>true</code>，并将放置对象：<code>body</code>的<code>dragenter</code>,<code>dragover</code>,<code>drop</code>的默认事件行为阻止；</li>
+<li>由于原生拖拽仅仅是拖拽目标的副本，移动过程中目标依然在原始位置。为实现更自然的效果需要让目标与副本同时移动；</li>
+<li>设置图像的<code>position</code>为<code>relative</code>使位置：<code>left、top</code>根据鼠标的偏移量增减。</li>
+</ul>
+</li>
+<li><p>目标三：</p>
+<ul>
+<li>实现光标变化：<ul>
+<li>边缘的检测通过<code>mousemove</code>事件中鼠标在<code>x,y</code>方向上与图像上下左右边缘的距离差是否小于某个阈值，小于则为当前方向增加进入标记；</li>
+<li>使用<code>1，2，4，8</code>标记进入四个方向边缘（上、右、下、左）；进入四个角则使用或运算判断，（右上、右下、左下、左上）分别为<code>3、6、12、9</code>。最终得出鼠标进入的具体方向；</li>
+</ul>
+</li>
+<li>实现不同方向上图像缩放：<ul>
+<li>由于元素在文档中的默认渲染方式，宽高增大会直接产生在该元素右侧和下侧增大，产生问题为：拖拽图像左侧和上侧增大方向依然是右侧和下侧，看上去很不自然</li>
+<li>解决方法，在拖拽上侧和左侧时候同时改变图像的相对位置，减小<code>left</code>和<code>top</code>的值,原理同目标二改变移动位置相同；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>目标四：</p>
+<ul>
+<li>建立这样的对象，只需要传入<code>图像</code>和<code>链接输入框</code>的<code>class</code>,即可建立多个图像查看器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="demo">demo</h3><ul>
+<li>使用原生<code>javascript</code>，选择器等基本操作使用自己书写的小型工具库；</li>
+<li>demo链接：<a href="http://fordawn.in/demo/360/imageviewer" target="_blank" rel="external">链接</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-05-16T06:50:25.000Z"><a href="/2015/05/16/task0001/">2015-05-16</a></time>
       
       
@@ -476,44 +554,11 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-05T07:29:41.000Z"><a href="/2015/05/05/js-basic-syntax/">2015-05-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/05/js-basic-syntax/">js-basic-syntax</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><code>a || (a = b);</code> //    if (a != 0) a = b;</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
+  
+    <a href="/page/2/" class="alignright next">下一頁</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -528,6 +573,8 @@
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
     <li><a href="/tags/css/">css</a><small>3</small></li>
+  
+    <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
     <li><a href="/tags/git/">git</a><small>1</small></li>
   
