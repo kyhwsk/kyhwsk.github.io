@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Block `Formatting Context` | k&#39;s Arable Land</title>
+  <title>k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Block `Formatting Context`"/>
+  
   <meta property="og:site_name" content="k&#39;s Arable Land"/>
 
   
@@ -54,41 +54,24 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-05-09T13:19:53.000Z"><a href="/2015/05/09/Block-Formatting-Context/">2015-05-09</a></time>
+        <time datetime="2015-05-28T02:09:46.000Z"><a href="/2015/05/28/learn-css-property/">2015-05-28</a></time>
       
       
   
-    <h1 class="title">Block `Formatting Context`</h1>
+    <h1 class="title"></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="一、概念">一、概念</h3><p><code>Formatting Context:</code>某块内容的渲染方式。</p>
-<pre><code>页面内一块独立渲染的区域，其中元素以某方式独立渲染。
-
- <span class="number">1</span>. <span class="keyword">Block</span>方式;
- <span class="number">2</span>. <span class="keyword">Inline</span>方式；
-</code></pre><h3 id="二、Block_Formatting_Context渲染规则:">二、<code>Block Formatting Context</code>渲染规则:</h3><ol>
-<li>内部的Box会在垂直方向，一个接一个地放置。</li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠<br>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
-<li>BFC的区域不会float box重叠。</li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-<li>一块以BFC方式渲染的区域的高度，浮动元素也参与计算</li>
-</ol>
-<h3 id="三、5条规则的示例&amp;应用：">三、5条规则的<strong>示例&amp;应用</strong>：</h3><ol>
-<li>自适应两栏布局；</li>
-<li>清楚内部浮动；</li>
-<li>防止垂直margin重叠；</li>
-</ol>
-<h3 id="四、使用BFC方式独立渲染某块区域的方式：">四、使用BFC方式独立渲染某块区域的方式：</h3><ol>
-<li>根元素</li>
-<li>float: ^none</li>
-<li>position：absolute｜fixed</li>
-<li>display：inline-block | table-cell | table-caption | flex | inline-flex</li>
-<li>overflow: ^visible</li>
-</ol>
-<p>详细见<a href="http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html" target="_blank" rel="external">前端精选文摘：BFC 神奇背后的原理</a></p>
+        <ul>
+<li><code>perspective-origin</code>:    the vanish point</li>
+<li><code>perspective</code>: lenght</li>
+<li><code>transform-style</code>: 3d</li>
+<li><code>backface-visibility</code>: visible, hidden ,initial</li>
+<li><code>border-style</code>: inset (3d border)</li>
+<li><code>justify-content</code>:(subproperty of flexible box layout module)<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">justify-content</a><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox-complete-guide</a></li>
+</ul>
 
       
     </div>
