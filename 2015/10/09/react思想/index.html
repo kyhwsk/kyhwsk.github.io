@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git problems | k&#39;s Arable Land</title>
+  <title>react思想 | k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="git problems"/>
+  <meta property="og:title" content="react思想"/>
   <meta property="og:site_name" content="k&#39;s Arable Land"/>
 
   
@@ -54,26 +54,76 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-05-05T16:30:53.000Z"><a href="/2015/05/06/git-problems/">2015-05-06</a></time>
+        <time datetime="2015-10-09T01:19:19.000Z"><a href="/2015/10/09/react思想/">2015-10-09</a></time>
       
       
   
-    <h1 class="title">git problems</h1>
+    <h1 class="title">react思想</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="从远程仓库更新本地文件时，使用git_fetch方法">从远程仓库更新本地文件时，使用git fetch方法</h3><ul>
-<li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
-<li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
+        <h3 id="特点">特点</h3><ul>
+<li>组件化方式思考开发方式，易于重用；</li>
+<li>自顶向下渲染</li>
+<li>react主要是一种观念，具有自己的解决问题、工具、库生态系统，</li>
 </ul>
-<ol>
-<li><code>git fetch origin branch</code> </li>
-<li><code>git checkout</code>丢弃原本不想改动的文件</li>
-<li><code>git diff</code> view the changes you made relative to the index (staging area for the next commit)</li>
-<li><code>git merge origin/branch</code>在当前分支上合并远程某分支</li>
-</ol>
+<h3 id="创新点">创新点</h3><ul>
+<li>使用观察者模式代替脏值检查（连续不断的检查）</li>
+<li>内存中的虚拟dom树 (spoiler: with shouldComponentUpdate() and ImmutableJS)</li>
+</ul>
+<h3 id="DIFF">DIFF</h3><ul>
+<li><p>层次之间关联</p>
+<ul>
+<li>一般来说，从两个任意树中找出最小修改值复杂度为O(N^3)，而react使用启发式算法在O(N)内寻找最佳相似度；</li>
+<li><p>只关联相对应层次的结点，极大的减少复杂度，且对于web应用来说很少改变树的等级</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/1.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>列表</p>
+<ul>
+<li><p>使用「key属性」关联一次操作先后两个list中的第一个组件；可以很容易找到这个唯一变化的子节点；</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/2.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>组件化</p>
+<ul>
+<li>为所有相同的<code>&lt;div&gt;</code> 以不同的class做了区分，因此无需对两个根本不可能有相似性的子树进行相似度比较。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/3.png)</span>
+</code></pre><h3 id="事件代理">事件代理</h3><ul>
+<li>解决了ie8不兼容的事件处理方式；</li>
+<li>根节点唯一个事件监听，当事件触发，浏览器提供了一个target节点，为模拟事件传播，react不会遍历虚拟dom层级；</li>
+<li>每个组件使用唯一id代表整个层级，通过把事件监听者存放在哈希表中，性能提高了（比起附加到虚拟节点上）</li>
+<li>对于每个事件和事件监听器，浏览器都会创建一个事件对象，好处是你可以很方便的<code>引用或修改该对象</code>，坏处是分配了很多内存。react为这些对象分配了一个池，每当需要一个事件对象，就会从池中重用。极大的减少了垃圾回收。</li>
+</ul>
+<h3 id="渲染">渲染</h3><ul>
+<li>批处理<ul>
+<li>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/4.png)</span>
+</code></pre><ul>
+<li>渲染子树<ul>
+<li>每次调用<code>setState</code>，该组件重建其子节点。若在根上调用<code>setState</code>，则整个应用重绘(操作的是虚拟dom，真正dom变化极少，且很少操作根节点，一般改变只局限于用户交互的区域)。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/5.png)</span>
+</code></pre><ul>
+<li>选择性渲染子树<ul>
+<li>可指定某个子树不要重新渲染<code>shouldComponentUpdate</code></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -83,7 +133,7 @@
         
   
   <div class="tags">
-    <a href="/tags/git/">git</a>
+    <a href="/tags/reactjs/">reactjs</a>
   </div>
 
         

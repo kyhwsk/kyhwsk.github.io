@@ -55,7 +55,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-11T04:22:55.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
+        <time datetime="2016-03-11T07:58:50.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
       
       
   
@@ -77,11 +77,11 @@
 </li>
 <li><p>定义重复的属性或重复的参数名。</p>
 </li>
-<li>不可以对禁止扩展的对象添加新属性。</li>
-</ul>
-<pre><code><span class="comment"><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></span>
-</code></pre><ul>
-<li>不可删除一个不可删除的属性。</li>
+<li><p>不可以对禁止扩展的对象添加新属性。</p>
+  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不可删除一个不可删除的属性。</p>
+</li>
 <li><p>严格模式下，不允许对 arguments 对象赋值，arguments 不再追踪参数的变化。</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//正常模式为 [2, 2]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//严格模式 [2, 1]</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -92,6 +92,100 @@
 <blockquote>
 <p>参考资料<br><a href="http://www.jianshu.com/p/aa759f273d59" target="_blank" rel="external">http://www.jianshu.com/p/aa759f273d59</a> </p>
 </blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-09T01:19:19.000Z"><a href="/2015/10/09/react思想/">2015-10-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/09/react思想/">react思想</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="特点">特点</h3><ul>
+<li>组件化方式思考开发方式，易于重用；</li>
+<li>自顶向下渲染</li>
+<li>react主要是一种观念，具有自己的解决问题、工具、库生态系统，</li>
+</ul>
+<h3 id="创新点">创新点</h3><ul>
+<li>使用观察者模式代替脏值检查（连续不断的检查）</li>
+<li>内存中的虚拟dom树 (spoiler: with shouldComponentUpdate() and ImmutableJS)</li>
+</ul>
+<h3 id="DIFF">DIFF</h3><ul>
+<li><p>层次之间关联</p>
+<ul>
+<li>一般来说，从两个任意树中找出最小修改值复杂度为O(N^3)，而react使用启发式算法在O(N)内寻找最佳相似度；</li>
+<li><p>只关联相对应层次的结点，极大的减少复杂度，且对于web应用来说很少改变树的等级</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/1.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>列表</p>
+<ul>
+<li><p>使用「key属性」关联一次操作先后两个list中的第一个组件；可以很容易找到这个唯一变化的子节点；</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/2.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>组件化</p>
+<ul>
+<li>为所有相同的<code>&lt;div&gt;</code> 以不同的class做了区分，因此无需对两个根本不可能有相似性的子树进行相似度比较。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/3.png)</span>
+</code></pre><h3 id="事件代理">事件代理</h3><ul>
+<li>解决了ie8不兼容的事件处理方式；</li>
+<li>根节点唯一个事件监听，当事件触发，浏览器提供了一个target节点，为模拟事件传播，react不会遍历虚拟dom层级；</li>
+<li>每个组件使用唯一id代表整个层级，通过把事件监听者存放在哈希表中，性能提高了（比起附加到虚拟节点上）</li>
+<li>对于每个事件和事件监听器，浏览器都会创建一个事件对象，好处是你可以很方便的<code>引用或修改该对象</code>，坏处是分配了很多内存。react为这些对象分配了一个池，每当需要一个事件对象，就会从池中重用。极大的减少了垃圾回收。</li>
+</ul>
+<h3 id="渲染">渲染</h3><ul>
+<li>批处理<ul>
+<li>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/4.png)</span>
+</code></pre><ul>
+<li>渲染子树<ul>
+<li>每次调用<code>setState</code>，该组件重建其子节点。若在根上调用<code>setState</code>，则整个应用重绘(操作的是虚拟dom，真正dom变化极少，且很少操作根节点，一般改变只局限于用户交互的区域)。</li>
+</ul>
+</li>
+</ul>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/5.png)</span>
+</code></pre><ul>
+<li>选择性渲染子树<ul>
+<li>可指定某个子树不要重新渲染<code>shouldComponentUpdate</code></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -472,48 +566,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-28T02:09:46.000Z"><a href="/2015/05/28/learn-css-property/">2015-05-28</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/28/learn-css-property/"></a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><code>perspective-origin</code>:    the vanish point</li>
-<li><code>perspective</code>: lenght</li>
-<li><code>transform-style</code>: 3d</li>
-<li><code>backface-visibility</code>: visible, hidden ,initial</li>
-<li><code>border-style</code>: inset (3d border)</li>
-<li><code>justify-content</code>:(subproperty of flexible box layout module)<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">justify-content</a><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox-complete-guide</a></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -543,6 +595,8 @@
     <li><a href="/tags/js/">js</a><small>5</small></li>
   
     <li><a href="/tags/react/">react</a><small>1</small></li>
+  
+    <li><a href="/tags/reactjs/">reactjs</a><small>1</small></li>
   
     <li><a href="/tags/regexp/">regexp</a><small>1</small></li>
   

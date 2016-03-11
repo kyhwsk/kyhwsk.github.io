@@ -54,7 +54,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-11T04:22:55.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
+        <time datetime="2016-03-11T07:58:50.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
       
       
   
@@ -76,11 +76,11 @@
 </li>
 <li><p>定义重复的属性或重复的参数名。</p>
 </li>
-<li>不可以对禁止扩展的对象添加新属性。</li>
-</ul>
-<pre><code><span class="comment"><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></span>
-</code></pre><ul>
-<li>不可删除一个不可删除的属性。</li>
+<li><p>不可以对禁止扩展的对象添加新属性。</p>
+  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不可删除一个不可删除的属性。</p>
+</li>
 <li><p>严格模式下，不允许对 arguments 对象赋值，arguments 不再追踪参数的变化。</p>
   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//正常模式为 [2, 2]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//严格模式 [2, 1]</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -182,6 +182,8 @@ var duoshuoQuery = {short_name:"kyhwsk"};
     <li><a href="/tags/js/">js</a><small>5</small></li>
   
     <li><a href="/tags/react/">react</a><small>1</small></li>
+  
+    <li><a href="/tags/reactjs/">reactjs</a><small>1</small></li>
   
     <li><a href="/tags/regexp/">regexp</a><small>1</small></li>
   
