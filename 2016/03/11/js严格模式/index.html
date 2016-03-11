@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>task0001 | k&#39;s Arable Land</title>
+  <title>js严格模式 | k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="task0001"/>
+  <meta property="og:title" content="js严格模式"/>
   <meta property="og:site_name" content="k&#39;s Arable Land"/>
 
   
@@ -54,48 +54,43 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-05-16T06:50:25.000Z"><a href="/2015/05/16/task0001/">2015-05-16</a></time>
+        <time datetime="2016-03-11T04:22:55.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
       
       
   
-    <h1 class="title">task0001</h1>
+    <h1 class="title">js严格模式</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="using_svg_to_implement_border-radius_in_ie8">using svg to implement border-radius in ie8</h3><ul>
-<li>inserting into ie8 after draw a svg image：<a href="https://css-tricks.com/using-svg/" target="_blank" rel="external">css-tricks</a></li>
-</ul>
-<h3 id="image与父容器间距离问题">image与父容器间距离问题</h3><ul>
-<li><a href="http://stackoverflow.com/questions/21153123/strange-2px-white-area-underneath-of-images-possible-css-error" target="_blank" rel="external">stack-overflow</a><a id="more"></a>
-<h3 id="display:table-cell用法"><code>display:table-cell</code>用法</h3></li>
-<li>使元素以显示出表格特性:单元格高度随内容整体变化；<br><code>border-spacing</code>表示<code>table－cell</code>之间的空白。应当与border-collapse:seperater同用，<code>margin</code>在<code>table-cell</code>之间不生效。<br>例子<a href="http://jsfiddle.net/FhQwb/1/" target="_blank" rel="external">见</a><h3 id="&lt;image&gt;（inline-block）之margin"><code>&lt;image&gt;（inline-block）</code>之margin</h3><h3 id="负外边距作用">负外边距作用</h3><ul>
-<li>block元素设置负外边距，父元素会为包裹住它而扩大（overflow:visible）。</li>
+        <h3 id="javascript_严格模式">javascript 严格模式</h3><ul>
+<li>严格模式下，不允许使用 with 语句。只有在执行时才可以确定对象的具体属性，而严格模式在编译时就检查变量，故语法错误。</li>
+<li>严格模式下，this 默认为 undefined。<ul>
+<li>若忘记了使用 new 运算符，则会抛出错误。</li>
+<li></li>
 </ul>
 </li>
+<li><p>禁止在函数内部遍历调用栈。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  f1.caller;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">  f1.arguments;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义重复的属性或重复的参数名。</p>
+</li>
+<li>不可以对禁止扩展的对象添加新属性。</li>
 </ul>
-<h3 id="渐变gradient:">渐变gradient:</h3><ul>
-<li><a href="https://css-tricks.com/css3-gradients/" target="_blank" rel="external">各个角度，定点,ie9fliter:gradient</a></li>
-<li><a href="http://stackoverflow.com/questions/23201134/transparent-argb-hex-value" target="_blank" rel="external">rgba-hex</a></li>
+<pre><code><span class="comment"><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></span>
+</code></pre><ul>
+<li>不可删除一个不可删除的属性。</li>
+<li><p>严格模式下，不允许对 arguments 对象赋值，arguments 不再追踪参数的变化。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//正常模式为 [2, 2]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//严格模式 [2, 1]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数声明必须在顶层。</p>
+</li>
+<li></li>
 </ul>
-<h3 id="页码制作_宽度不固定块元素居中：">页码制作 宽度不固定块元素居中：</h3><ul>
-<li>起因：每个页码作为行内元素只设置内边距不设置宽高 </li>
-</ul>
-<h3 id="浮动元素周围文字环绕问题">浮动元素周围文字环绕问题</h3><ul>
-<li>方法1:处于方便仅仅给环绕文字包裹住一层div，并同样为其设置浮动</li>
-</ul>
-<h3 id="float：left元素，如何在父元素内垂直居中？">float：left元素，如何在父元素内垂直居中？</h3><ul>
-<li>绝对定位，设置margin</li>
-<li>最佳办法？</li>
-</ul>
-<h3 id="如何让文字分布在行的上侧,即行高不是均匀的分布在行的上下_而只是分布下侧？">如何让文字分布在行的上侧,即行高不是均匀的分布在行的上下 而只是分布下侧？</h3><ul>
-<li>设置padding</li>
-</ul>
-<h3 id="实现浮动左右分栏等高：">实现浮动左右分栏等高：</h3><ul>
-<li>子元素padding－bottom ＋ margin-bottom 设置相同最大值，其值的大小至少大于两栏高度差值；</li>
-<li>父元素overflow: hidden。<br>原理:建立了bfc的父元素会计算浮动子元素的高度；子元素高度计算按照盒模型计算<br>例子(见)[<a href="http://codepen.io/kyhwsk/pen/VLjLRw" target="_blank" rel="external">http://codepen.io/kyhwsk/pen/VLjLRw</a>]</li>
-</ul>
+<blockquote>
+<p>参考资料<br><a href="http://www.jianshu.com/p/aa759f273d59" target="_blank" rel="external">http://www.jianshu.com/p/aa759f273d59</a> </p>
+</blockquote>
 
       
     </div>
@@ -105,7 +100,7 @@
         
   
   <div class="tags">
-    <a href="/tags/homework/">homework</a>
+    <a href="/tags/js/">js</a>, <a href="/tags/syntax/">syntax</a>
   </div>
 
         

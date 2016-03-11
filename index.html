@@ -55,6 +55,195 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-03-11T04:22:55.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/11/js严格模式/">js严格模式</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="javascript_严格模式">javascript 严格模式</h3><ul>
+<li>严格模式下，不允许使用 with 语句。只有在执行时才可以确定对象的具体属性，而严格模式在编译时就检查变量，故语法错误。</li>
+<li>严格模式下，this 默认为 undefined。<ul>
+<li>若忘记了使用 new 运算符，则会抛出错误。</li>
+<li></li>
+</ul>
+</li>
+<li><p>禁止在函数内部遍历调用栈。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  f1.caller;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">  f1.arguments;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义重复的属性或重复的参数名。</p>
+</li>
+<li>不可以对禁止扩展的对象添加新属性。</li>
+</ul>
+<pre><code><span class="comment"><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></span>
+</code></pre><ul>
+<li>不可删除一个不可删除的属性。</li>
+<li><p>严格模式下，不允许对 arguments 对象赋值，arguments 不再追踪参数的变化。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//正常模式为 [2, 2]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//严格模式 [2, 1]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数声明必须在顶层。</p>
+</li>
+<li></li>
+</ul>
+<blockquote>
+<p>参考资料<br><a href="http://www.jianshu.com/p/aa759f273d59" target="_blank" rel="external">http://www.jianshu.com/p/aa759f273d59</a> </p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-11T14:36:12.000Z"><a href="/2015/07/11/LearningReact/">2015-07-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/11/LearningReact/">React特性</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="数据显示">数据显示</h2><h3 id="反应性的更新">反应性的更新</h3><ul>
+<li>JSX语法中<code>props</code>被传递为属性。可将其看作组件中的常量，传入后不要修改它。</li>
+</ul>
+<h3 id="组件类似函数">组件类似函数</h3><ul>
+<li>可将其看作带有<code>props</code>和<code>state</code>渲染html的函数。记住这点，组件则很容易理解。  </li>
+</ul>
+<blockquote>
+<p>react只能渲染单一根节点，若想返回多个节点则应将其包裹在一个根节点中。  </p>
+</blockquote>
+<h2 id="JSX语法">JSX语法</h2><ul>
+<li>html标签使用小写字母标签，react组件使用大写字母开头的标签</li>
+<li>JSX作为js不会改变js的语义，且xml小写属性名应写为js风格的驼峰式：<code>class</code>-<code>className</code>,<code>for</code>-<code>htmlFor</code></li>
+<li>jsx中属性和孩子节点会转换为<code>React.createElement()</code>的参数。</li>
+<li>若想引用所有属性，可事先将其全部添入jsx</li>
+<li>若不知道到底想设置什么属性，可将所有属性存入一个对象，不要改变<code>props</code>,难以检测右值<h2 id="动态交互的UI">动态交互的UI</h2></li>
+</ul>
+<h3 id="事件绑定｜合成事件">事件绑定｜合成事件</h3><ul>
+<li>消除浏览器和设备间的差异，同html书写方式相同  </li>
+</ul>
+<h3 id="自动绑定｜事件代理">自动绑定｜事件代理</h3><ul>
+<li>每个方法自动绑定到组件实例上避免手动维护this</li>
+<li>在顶层使用一个监听器自动监听所有事件；每个事件发生，事件处理程序都能够与该事件映射 </li>
+</ul>
+<h3 id="组件代表状态机">组件代表状态机</h3><ul>
+<li>将UI看做不同的状态并绘制这些状态，很容易保证UI的一致和连续性;只需要更新状态，React将以高效方式更新dom；</li>
+</ul>
+<h3 id="状态机如何工作">状态机如何工作</h3><ul>
+<li><code>setState(data, callback)</code>方法把<code>data</code>合并入<code>this.state</code>中并重绘组件；组件结束重绘后，可选的<code>callback</code>则会被调用。由于React会注意保证UI更新，故一般并不需要提供回调。</li>
+</ul>
+<h3 id="什么样的组件需要状态">什么样的组件需要状态</h3><ul>
+<li>大部分组件要从<code>props</code>中获取数据并渲染它，然而有时需要响应用户输入，服务器请求或时间流逝，此时需要用到状态。</li>
+<li>最好使更多的组件无状态。这样做可以将状态同大部分逻辑脱离并最小化冗余,使应用开发更简便；</li>
+<li>通用的模式是创建一些无状态的组件</li>
+</ul>
+<h3 id="哪些需要状态转换">哪些需要状态转换</h3><ul>
+<li>状态需要包含那些可能被组件的事件处理方法更新ui的数据，这类数据一般很小并且是可json序列化的。构建状态的组件时，应思考该状态可能代表的最小含义并将其存储在<code>this.state</code>中。这样，在render函数内就可以简单的对基于该状态的信息进行计算。尽管状态添加了冗余或着可计算的值，意味着需要显示的在语法中而不是依靠react为我们计算它们，使用这种方式来构建应用可以说是最正确的方式。</li>
+</ul>
+<h3 id="哪些不需要状态转换">哪些不需要状态转换</h3><ul>
+<li>计算性的数据：把所有的计算放在<code>render()</code>中可以轻易保证UI的连续性。例如，若要将一段包含在状态中的列表项数组转换为字符串，只需要<code>this.state.listItems.length + &#39; list items&#39;</code>放在render()内而不需要放在<code>state</code>中。</li>
+<li>react组件：在<code>render()</code>中使用底层的属性和状态来构建</li>
+<li>从<code>props</code>中复制而来的数据: 如果可能尽量使用<code>props</code>。由于<code>props</code>会在某段时间之后变化，故唯一有效的可在<code>state</code>中存储<code>props</code>的用法是最好知道它之前的值。</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-02T13:45:24.000Z"><a href="/2015/07/02/mac上hexo/">2015-07-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/02/mac上hexo/">Hexo My Note</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="Preparation：">Preparation：</h3><p><a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p>
+<h3 id="Useful_command:">Useful command:</h3><ul>
+<li>hexo new “my pages”</li>
+<li>npm install (init dependency)</li>
+<li>hexo server / hexo s</li>
+<li>hexo g (generate static pages)</li>
+<li>hexo d (deploy your blog on remote site)</li>
+<li>hexo —help</li>
+</ul>
+<h3 id="configing_site">configing site</h3><p><a href="http://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">config your site</a></p>
+<h3 id="deploy_on_github">deploy on github</h3><p><strong>steps:</strong></p>
+<ol>
+<li><code>sudo npm install -g hexo-deployer-git --save</code></li>
+</ol>
+<h3 id="make_my_own_theme">make my own theme</h3><p>backup tips：</p>
+<ul>
+<li>把整个hexo的文件夹打包 更换环境重新npm install</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-06-16T16:05:57.000Z"><a href="/2015/06/17/js-basic-syntax/">2015-06-17</a></time>
       
       
@@ -325,200 +514,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-24T21:55:49.000Z"><a href="/2015/05/25/just-a-few-notes-on-angular/">2015-05-25</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/25/just-a-few-notes-on-angular/">just a few extracts on angular</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="Module">Module</h3><ul>
-<li>function:<ul>
-<li>angular.moudule: a global place, for register retrieving all modules</li>
-<li>a collection of <code>services</code> <code>directives</code> <code>controllers</code> <code>filters</code> &amp; configuration information</li>
-<li>retrieve / create </li>
-</ul>
-</li>
-<li>type: angular.Module</li>
-</ul>
-<h3 id="auto">auto</h3><ul>
-<li>$injector</li>
-<li>$provider<ul>
-<li>service(name, constructor): rigister a service  </li>
-</ul>
-</li>
-</ul>
-<h3 id="directive">directive</h3><ul>
-<li>ngClass: string, object</li>
-</ul>
-<h3 id="ng-strict-di">ng-strict-di</h3><ul>
-<li>annotate services</li>
-</ul>
-<h3 id="启动angular">启动angular</h3><ul>
-<li>automatic Initialization<ul>
-<li><code>DOMContentLoaded</code> triggers angular’s initiallize;<ul>
-<li>find ng-app directive;</li>
-<li>load module</li>
-<li>create injector</li>
-<li>treat only a portion of DOM as angular application</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="service">service</h3><ul>
-<li>Lazily instantiated – Angular only instantiates a service when an application component depends on it.</li>
-</ul>
-<ul>
-<li>Singletons – Each component dependent on a service gets a reference to the single instance generated by the service factory.</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-17T01:35:14.000Z"><a href="/2015/05/17/制作简单的图像查看器/">2015-05-17</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/17/制作简单的图像查看器/">制作简单的图像查看器</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="任务目标：">任务目标：</h3><ul>
-<li>给定地址显示图像</li>
-<li>图像可拖拽</li>
-<li>图像可缩放</li>
-</ul>
-<h3 id="具体目标：">具体目标：</h3><ul>
-<li>在输入框内填入地址，地址正确图像正常显示，否则显示错误提示信息</li>
-<li>鼠标移入图像显示拖拽光标，此时可以将图像拖拽到任意位置</li>
-<li>鼠标移入图像边缘：（上下左右，四个角）可以显示不同方向光标，根据提示可以将图像在不同方向上放大缩小，拖拽和缩放同一时刻只能执行一种</li>
-<li>可以在一个页面中创建多个这样的图像查看器</li>
-</ul>
-<h3 id="实现思路">实现思路</h3><ul>
-<li>目标一：判断图像是否正常加载使用<code>onload</code> &amp; <code>onerror</code>判断</li>
-<li><p>目标二：</p>
-<ul>
-<li>拖拽使用html5原生拖拽，允许拖拽时为图像<code>draggable</code>设置为<code>true</code>，并将放置对象：<code>body</code>的<code>dragenter</code>,<code>dragover</code>,<code>drop</code>的默认事件行为阻止；</li>
-<li>由于原生拖拽仅仅是拖拽目标的副本，移动过程中目标依然在原始位置。为实现更自然的效果需要让目标与副本同时移动；</li>
-<li>设置图像的<code>position</code>为<code>relative</code>使位置：<code>left、top</code>根据鼠标的偏移量增减。</li>
-</ul>
-</li>
-<li><p>目标三：</p>
-<ul>
-<li>实现光标变化：<ul>
-<li>边缘的检测通过<code>mousemove</code>事件中鼠标在<code>x,y</code>方向上与图像上下左右边缘的距离差是否小于某个阈值，小于则为当前方向增加进入标记；</li>
-<li>使用<code>1，2，4，8</code>标记进入四个方向边缘（上、右、下、左）；进入四个角则使用或运算判断，（右上、右下、左下、左上）分别为<code>3、6、12、9</code>。最终得出鼠标进入的具体方向；</li>
-</ul>
-</li>
-<li>实现不同方向上图像缩放：<ul>
-<li>由于元素在文档中的默认渲染方式，宽高增大会直接产生在该元素右侧和下侧增大，产生问题为：拖拽图像左侧和上侧增大方向依然是右侧和下侧，看上去很不自然</li>
-<li>解决方法，在拖拽上侧和左侧时候同时改变图像的相对位置，减小<code>left</code>和<code>top</code>的值,原理同目标二改变移动位置相同；</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>目标四：</p>
-<ul>
-<li>建立这样的对象，只需要传入<code>图像</code>和<code>链接输入框</code>的<code>class</code>,即可建立多个图像查看器。</li>
-</ul>
-</li>
-</ul>
-<h3 id="demo">demo</h3><ul>
-<li>使用原生<code>javascript</code>，选择器等基本操作使用自己书写的小型工具库；</li>
-<li>demo链接：<a href="http://fordawn.in/demo/360/imageviewer" target="_blank" rel="external">链接</a></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-16T06:50:25.000Z"><a href="/2015/05/16/task0001/">2015-05-16</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/16/task0001/">task0001</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="using_svg_to_implement_border-radius_in_ie8">using svg to implement border-radius in ie8</h3><ul>
-<li>inserting into ie8 after draw a svg image：<a href="https://css-tricks.com/using-svg/">css-tricks</a></li>
-</ul>
-<h3 id="image与父容器间距离问题">image与父容器间距离问题</h3><ul>
-<li><a href="http://stackoverflow.com/questions/21153123/strange-2px-white-area-underneath-of-images-possible-css-error">stack-overflow</a>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/05/16/task0001/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -537,7 +532,7 @@
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
-    <li><a href="/tags/css/">css</a><small>6</small></li>
+    <li><a href="/tags/css/">css</a><small>7</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
@@ -545,13 +540,13 @@
   
     <li><a href="/tags/homework/">homework</a><small>1</small></li>
   
-    <li><a href="/tags/js/">js</a><small>2</small></li>
+    <li><a href="/tags/js/">js</a><small>5</small></li>
   
     <li><a href="/tags/react/">react</a><small>1</small></li>
   
     <li><a href="/tags/regexp/">regexp</a><small>1</small></li>
   
-    <li><a href="/tags/syntax/">syntax</a><small>1</small></li>
+    <li><a href="/tags/syntax/">syntax</a><small>2</small></li>
   
   </ul>
 </div>
@@ -561,7 +556,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2015 k
+  &copy; 2016 k
   
 </div>
 <div class="clearfix"></div></footer>
