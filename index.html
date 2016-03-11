@@ -155,33 +155,35 @@
 </li>
 <li><p>组件化</p>
 <ul>
-<li>为所有相同的<code>&lt;div&gt;</code> 以不同的class做了区分，因此无需对两个根本不可能有相似性的子树进行相似度比较。</li>
+<li><p>为所有相同的<code>&lt;div&gt;</code> 以不同的class做了区分，因此无需对两个根本不可能有相似性的子树进行相似度比较。</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/3.png" alt=""></p>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/3.png)</span>
-</code></pre><h3 id="事件代理">事件代理</h3><ul>
+<h3 id="事件代理">事件代理</h3><ul>
 <li>解决了ie8不兼容的事件处理方式；</li>
 <li>根节点唯一个事件监听，当事件触发，浏览器提供了一个target节点，为模拟事件传播，react不会遍历虚拟dom层级；</li>
 <li>每个组件使用唯一id代表整个层级，通过把事件监听者存放在哈希表中，性能提高了（比起附加到虚拟节点上）</li>
 <li>对于每个事件和事件监听器，浏览器都会创建一个事件对象，好处是你可以很方便的<code>引用或修改该对象</code>，坏处是分配了很多内存。react为这些对象分配了一个池，每当需要一个事件对象，就会从池中重用。极大的减少了垃圾回收。</li>
 </ul>
 <h3 id="渲染">渲染</h3><ul>
-<li>批处理<ul>
-<li>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</li>
-</ul>
+<li><p>批处理</p>
+<ul>
+<li><p>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/4.png" alt=""></p>
 </li>
 </ul>
-<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/4.png)</span>
-</code></pre><ul>
-<li>渲染子树<ul>
-<li>每次调用<code>setState</code>，该组件重建其子节点。若在根上调用<code>setState</code>，则整个应用重绘(操作的是虚拟dom，真正dom变化极少，且很少操作根节点，一般改变只局限于用户交互的区域)。</li>
-</ul>
+</li>
+<li><p>渲染子树</p>
+<ul>
+<li><p>每次调用<code>setState</code>，该组件重建其子节点。若在根上调用<code>setState</code>，则整个应用重绘(操作的是虚拟dom，真正dom变化极少，且很少操作根节点，一般改变只局限于用户交互的区域)。</p>
+<p><img src="http://calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/5.png" alt=""></p>
 </li>
 </ul>
-<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//calendar.perfplanet.com/wp-content/uploads/2013/12/vjeux/5.png)</span>
-</code></pre><ul>
-<li>选择性渲染子树<ul>
+</li>
+<li><p>选择性渲染子树</p>
+<ul>
 <li>可指定某个子树不要重新渲染<code>shouldComponentUpdate</code></li>
 </ul>
 </li>
