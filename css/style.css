@@ -114,7 +114,7 @@ a:hover {
 }
 #header h1 {
   font-weight: normal;
-  font-size: 2.5em;
+  font-size: 3em;
   line-height: 1;
 }
 #header h2 {
@@ -124,6 +124,8 @@ a:hover {
   margin-top: 10px;
 }
 #header #main-nav {
+  position: absolute;
+  right: 0;
   font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
@@ -133,6 +135,13 @@ a:hover {
 #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+}
+#header .headerwrap {
+  position: relative;
+  -webkit-perspective: 50em;
+  -moz-perspective: 50em;
+  -ms-perspective: 50em;
+  perspective: 50em;
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
@@ -514,6 +523,9 @@ article footer .addthis iframe {
   padding-left: 10px;
   font-family: FontAwesome;
 }
+#content {
+  margin-top: 150px;
+}
 .archive-title {
   color: #999;
   font-weight: normal;
@@ -590,6 +602,8 @@ article footer .addthis iframe {
 }
 #sidebar .search {
   margin-bottom: 30px;
+  -webkit-box-shadow: 1px 2px 3px #ddd;
+  box-shadow: 1px 2px 3px #ddd;
 }
 #sidebar .search input {
   background: #fff;
@@ -597,7 +611,8 @@ article footer .addthis iframe {
   font-style: italic;
   font-size: 1em;
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
+  outline: none;
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
