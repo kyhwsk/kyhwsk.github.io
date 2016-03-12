@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>彙整：2015/7 | k&#39;s Arable Land</title>
+  <title>归档：2015/7 | k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -28,25 +28,27 @@
 
 
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">k&#39;s Arable Land</a></h1>
-  <h2><a href="/">discover more</a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-      <li><a href="/demo/360/imageviewer">Demo</a></li>
-    
-      <li><a href="/demo/360/cv">About</a></li>
-    
-  </ul>
+  <header id="header" class="inner"><div class="headerwrap">
+  <div class="alignleft title rotate">
+    <h1><a href="/">k&#39;s Arable Land</a></h1>
+    <h2><a href="/">discover more</a></h2>
+  </div>
+  <nav id="main-nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/demo/360/imageviewer">Demo</a></li>
+      
+        <li><a href="/demo/360/cv">About</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 <h2 class="archive-title">2015/7</h2>
@@ -97,7 +99,7 @@
 
   
 <div class="widget tag">
-  <h3 class="title">標籤</h3>
+  <h3 class="title">标签</h3>
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
@@ -127,6 +129,13 @@
   </ul>
 </div>
 
+
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:fordawn.in">
+  </form>
+</div>
 </aside>
     <div class="clearfix"></div>
   </div>
@@ -160,22 +169,42 @@
 (function($) { 
   // When to show the scroll link
   // higher number = scroll link appears further down the page   
-  var upperLimit = 1000;
   
+  var upperLimit = 1000;
+  var rotateLimit = 105 * 2;
+
+  var $rotate = $('.rotate');
+  var $headerwrap =  $('.headerwrap');
+
+  var width = $headerwrap.outerWidth();
+  var height = $headerwrap.outerHeight();
+  var position = $headerwrap.position();
+
+  $headerwrap.css({position: 'fixed', top: position.top, left: position.left, zIndex: -1, width: width + 'px', height: height + 'px'});
+
+  var $sidebar =  $('#sidebar');
+  var sidepos = $sidebar.position();
+  $sidebar.css({position: 'fixed', top: sidepos.top, left: sidepos.left});
+
+
   // Our scroll link element
   var scrollElem = $('#totop');
-   
+  
   // Scroll to top speed
   var scrollSpeed = 500;
-   
+  var delta = 0;
   // Show and hide the scroll to top link based on scroll position   
   scrollElem.hide();
-  $(window).scroll(function () {            
+  $(window).scroll(function () {
     var scrollTop = $(document).scrollTop();       
     if ( scrollTop > upperLimit ) {
       $(scrollElem).stop().fadeTo(300, 1); // fade back in           
-    }else{       
+    }else{
       $(scrollElem).stop().fadeTo(300, 0); // fade out
+      if (scrollTop <  rotateLimit) {       
+        $rotate.css({transform: 'rotateY(' + Math.min(scrollTop / 2, rotateLimit) + 'deg) translateX(' + Math.max(-scrollTop / 20, -rotateLimit) + 'em)',
+        });
+      }
     }
   });
 
