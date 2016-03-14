@@ -554,6 +554,7 @@ article footer .addthis iframe {
   margin-bottom: 0;
 }
 #sidebar {
+  position: relative;
   width: 270px;
   line-height: 1.8em;
 }
