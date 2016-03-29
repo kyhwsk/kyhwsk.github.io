@@ -55,7 +55,53 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-14T05:31:31.000Z"><a href="/2016/03/14/learn-css-property/">2016-03-14</a></time>
+        <time datetime="2016-03-29T04:51:06.000Z"><a href="/2016/03/29/pdf制作/">2016-03-29</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/29/pdf制作/">将你的html生成pdf</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="工具">工具</h3><ul>
+<li><a href="http://www.princexml.com/download/" target="_blank" rel="external">prince</a>自己尝试的众多工具中很好用的一个，其内部自带webkit渲染引擎, 能将html正确排版。但是其版本较老，很多css新特性是不能用的。</li>
+</ul>
+<h3 id="使用">使用</h3><ul>
+<li>安装后，使用<code>prince -s index.css index.html -o output.pdf</code>命令分别用于指定css/html/output文件名。</li>
+<li>如果你的html页面很大，不同于一般的a4大小，可以在css中指定页面大小，例如<code>@page { size: 1280px 1780px }</code>。</li>
+</ul>
+<h3 id="注意">注意</h3><ul>
+<li>其布局方式和css还是有些区别，比如不支持相对定位，负边距等，布局的较好方案是使用<a href="http://www.princexml.com/doc/tables/" target="_blank" rel="external">table</a>,基本不会出现意外bug;</li>
+<li>支持将javacscript代码也转换为pdf，见<a href="http://www.princexml.com/doc/9.0/javascript/" target="_blank" rel="external">link</a><h3 id="其他">其他</h3></li>
+<li><a href="http://www.princexml.com/doc/installing/#installing" target="_blank" rel="external">安装</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-03-14T06:38:39.000Z"><a href="/2016/03/14/learn-css-property/">2016-03-14</a></time>
       
       
   
@@ -70,8 +116,10 @@
 <li><code>perspective</code>: lenght</li>
 <li><code>transform-style</code>: 3d</li>
 <li><code>backface-visibility</code>: visible, hidden ,initial</li>
+</ul>
+<h2 id="other_css_properties">other css properties</h2><ul>
 <li><code>border-style</code>: inset (3d border)</li>
-<li><code>justify-content</code>:(subproperty of flexible box layout module)</li>
+<li><code>justify-content</code>:(subproperty of flexible box layout module)<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">justify-content</a><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox-complete-guide</a></li>
 </ul>
 
       
@@ -542,40 +590,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-06-13T01:19:19.000Z"><a href="/2015/06/13/学习-before-after/">2015-06-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/06/13/学习-before-after/">学习::before ::after</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -610,7 +624,7 @@
   
     <li><a href="/tags/js/">js</a><small>4</small></li>
   
-    <li><a href="/tags/other/">other</a><small>1</small></li>
+    <li><a href="/tags/other/">other</a><small>2</small></li>
   
     <li><a href="/tags/react-native/">react native</a><small>1</small></li>
   
