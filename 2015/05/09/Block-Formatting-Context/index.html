@@ -64,24 +64,28 @@
     </header>
     <div class="entry">
       
-        <h3 id="一、概念">一、概念</h3><p><code>Formatting Context:</code>某块内容的渲染方式。</p>
+        <p>###一、概念</p>
+<p><code>Formatting Context:</code>某块内容的渲染方式。</p>
 <pre><code>页面内一块独立渲染的区域，其中元素以某方式独立渲染。
 
- <span class="number">1</span>. <span class="keyword">Block</span>方式;
- <span class="number">2</span>. <span class="keyword">Inline</span>方式；
-</code></pre><h3 id="二、Block_Formatting_Context渲染规则:">二、<code>Block Formatting Context</code>渲染规则:</h3><ol>
+ 1. Block方式;
+ 2. Inline方式；
+</code></pre><p>###二、<code>Block Formatting Context</code>渲染规则:</p>
+<ol>
 <li>内部的Box会在垂直方向，一个接一个地放置。</li>
 <li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠<br>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
 <li>BFC的区域不会float box重叠。</li>
 <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
 <li>一块以BFC方式渲染的区域的高度，浮动元素也参与计算</li>
 </ol>
-<h3 id="三、5条规则的示例&amp;应用：">三、5条规则的<strong>示例&amp;应用</strong>：</h3><ol>
+<p>###三、5条规则的<strong>示例&amp;应用</strong>：</p>
+<ol>
 <li>自适应两栏布局；</li>
 <li>清楚内部浮动；</li>
 <li>防止垂直margin重叠；</li>
 </ol>
-<h3 id="四、使用BFC方式独立渲染某块区域的方式：">四、使用BFC方式独立渲染某块区域的方式：</h3><ol>
+<p>###四、使用BFC方式独立渲染某块区域的方式：</p>
+<ol>
 <li>根元素</li>
 <li>float: ^none</li>
 <li>position：absolute｜fixed</li>
@@ -128,7 +132,7 @@
 
 <section id="comment">
 
-  <h1 class="title">留言</h1>
+  <h1 class="title">Kommentare</h1>
 
 
 
@@ -168,12 +172,12 @@ var duoshuoQuery = {short_name:"kyhwsk"};
 
   
 <div class="widget tag">
-  <h3 class="title">标签</h3>
+  <h3 class="title">Tags</h3>
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
-    <li><a href="/tags/css/">css</a><small>7</small></li>
+    <li><a href="/tags/css/">css</a><small>5</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
@@ -185,7 +189,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
   
     <li><a href="/tags/js/">js</a><small>4</small></li>
   
-    <li><a href="/tags/other/">other</a><small>2</small></li>
+    <li><a href="/tags/other/">other</a><small>1</small></li>
   
     <li><a href="/tags/react-native/">react native</a><small>1</small></li>
   
@@ -201,7 +205,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>
@@ -211,7 +215,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2016 k
+  &copy; 2017 k
   
 </div>
 <div class="clearfix"></div></footer>

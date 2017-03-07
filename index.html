@@ -55,140 +55,17 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-05-09T14:34:59.000Z"><a href="/2016/05/09/underscore与lodash/">2016-05-09</a></time>
+        <time datetime="2017-03-07T06:13:29.000Z"><a href="/2017/03/07/End Procrastination Now/">2017-03-07</a></time>
       
       
   
-    <h1 class="title"><a href="/2016/05/09/underscore与lodash/">underscore与lodash</a></h1>
+    <h1 class="title"><a href="/2017/03/07/End Procrastination Now/"></a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="underscore_和_lodash">underscore 和 lodash</h1><blockquote>
-<p>你一定是那类能将事情做好的[人士]。但为了将事情做好，首先你得喜欢做这件事，而不是喜欢这件事情的结果，那仅仅是第二位。</p>
-<ul>
-<li>安 兰德</li>
-</ul>
-</blockquote>
-<p><code>JavaScript</code>是种实用的工具型语言，由于自身简洁的API及松散的类型系统，其在不少地方都有应用。<code>JavaScript</code>的基本知识点很少，是种容易学习和掌握的语言。这种特性使其具有很好的生产效率，但这也意味着在历史上<code>JavaScript</code>的类型缺乏一些高级特性，这些特性可以增强语言的健壮性，比如源自于<code>集合</code>以及<code>哈希</code>的函数迭代构造。</p>
-<p> 为了弥合这种差距，<code>Jeremy Ashkenas</code>于2009年建立了<code>Underscore</code>这样一个库：一个涵盖了超过100种用来操作、过滤、哈希变换与集合的函数集。这其中的很多函数诸如 <code>map()</code>和<code>reduce()</code>之类， 都体现着与函数式编程语言所共有的概念。其他函数像<code>isArguments()</code>、<code>isUndefined()</code>则只特定于<code>JavaScript</code>。</p>
-<p>随着<code>Undersore</code>在许多web应用程序中的广泛应用， 发生了两件激动人心的事。第一，<code>ECMAscript 5</code>标准于同年发布了，原生<code>JavaScript</code>对象中包含许多类似<code>Underscore</code>的方法，例如<code>Array.prototype.map()</code>、<code>Array.prototype.reduce()</code>和<code>Array.isArray()</code>，成为了<code>ECMAscript 5</code>特色。但尽管<code>ECMAscript 5</code>（以及对于<code>ECMAscript 6 和 7</code>中较少部分）扩展了<code>Underscore</code>的一些关键的API，它仍然仅包含<code>Underscore.js</code>的一小部分功能。</p>
-<p>第二，<code>Underscore</code>被克隆（<code>Git</code>/<code>GitHub</code>中仓库<code>fork</code>）为一个叫做<code>Lodash</code>的新项目，以达到大幅提升性能及扩展api的目的。由于<code>Lodash</code>不但实现了<code>Underscore</code>中所有函数，还增加了其本身特有函数，所以说<code>Underscore</code>是<code>Lodash</code>的子集。此外，所有相应的<code>ECMAscript</code>标准中的函数亦是<code>Lodash</code>的一部分。可以看到，清单<code>16-1</code>中表格展示了<code>Underscore</code>和<code>Lodash</code>与对应的原生<code>ECMAscript</code>的映射关系。</p>
-<ul>
-<li><strong>表格16-1.</strong> <em>Underscore和Lodash与目前（及提案）原生JavaScript对比</em></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>ECMAScript 5</th>
-<th style="text-align:center">Underscore/Lodash</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Array.prototype.every()</td>
-<td style="text-align:center">all()/every()</td>
-</tr>
-<tr>
-<td>Array.prototype.filter()</td>
-<td style="text-align:center">select()/filter()</td>
-</tr>
-<tr>
-<td>Array.prototype.forEach</td>
-<td style="text-align:center">each()/forEach()</td>
-</tr>
-<tr>
-<td>Array.isArray()</td>
-<td style="text-align:center">isArray()</td>
-</tr>
-<tr>
-<td>Object.keys()</td>
-<td style="text-align:center">keys()</td>
-</tr>
-<tr>
-<td>Array.prototype.map()</td>
-<td style="text-align:center">map()</td>
-</tr>
-<tr>
-<td>Array.prototype.reduce()</td>
-<td style="text-align:center">inject()/foldl()/reduce()</td>
-</tr>
-<tr>
-<td>Array.prototype.reduceRight()</td>
-<td style="text-align:center">foldr()/reduceRight()</td>
-</tr>
-<tr>
-<td>Array.prototype.some()</td>
-<td style="text-align:center">some()</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>ECMAScript 6</th>
-<th style="text-align:center">Underscore/Lodash</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Array.prototype.find()</td>
-<td style="text-align:center">find()</td>
-</tr>
-<tr>
-<td>Array.prototype.findIndex()</td>
-<td style="text-align:center">findIndex()</td>
-</tr>
-<tr>
-<td>Array.prototype.keys()</td>
-<td style="text-align:center">keys()</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>ECMAScript 7</th>
-<th style="text-align:center">Underscore/Lodash</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Array.prototype.contains()</td>
-<td style="text-align:center">include()/contains()</td>
-</tr>
-</tbody>
-</table>
-<p>由于<code>Underscore</code>和<code>Lodash</code>共享同一套<code>API</code>， <code>Lodash</code>可以用作<code>Underscore</code>的一种直接替代。 但由于<code>Lodash</code>的额外功能，反过来则不一定如此。比如<code>Underscore</code>和<code>Lodash</code>都具有一个<code>clone()</code>方法，却只有<code>Lodash</code>实现了deepClone()方法。开发者选择<code>Lodash</code>总是多于<code>Underscore</code>通常是因为这些额外函数，此外其性能受益亦很明显。通过函数间标准性能检查程序，<code>Lodash</code>比<code>Underscore</code>平均要快上35%， 它通过优先使简单循环而不是用类似<code>forEach()</code>、<code>map()</code>、<code>reduce()</code>等原生函数代理，实现了明显的性能提升。</p>
-<p>本章集中于讨论<code>Lodash</code>和<code>Underscore</code>中还没被<code>Ecmascript</code>实现（或提案）的大部分特性（见表6-11及6-12中的函数）。Mozilla出色的文档涵盖了每个原生函数，同样，<code>Underscore</code>和<code>Lodash</code>的文档中也涵盖了其每个函数的实现。</p>
-<p>不仅如此，<code>Underscore</code>和<code>Lodash</code>对适合于对象与集合的函数提供的非常多，而不只是仅提供几个常用函数。本章将探索其中的部分函数。</p>
-<blockquote>
-<p>简明说来，本章的剩余部分仅仅引用了<code>Underscore</code>， 但请理解除非特殊说明，<code>Underscore</code>和<code>Lodash</code>是可互换的。</p>
-</blockquote>
-<h2 id="安装及用法">安装及用法</h2><p>在浏览器或任何服务器端JavaScript环境（例如<code>Node.js</code>）中， <code>Underscore</code>均可以直接作为库来导入，不需要外部依赖。</p>
-<p>您可直接从<code>Underscore</code>官网下载<code>Underscore.js</code>文件<a href="http://underscorejs.org" target="_blank" rel="external">http://underscorejs.org</a>，或者通过类似<code>Npm</code>，<code>Bower</code>，<code>Component</code>的包管理器来安装它。</p>
-<p>在浏览器中，您可以将<code>Underscore</code>作为一个<code>script</code>资源直接引入，或者通过实现了<code>AMD</code>或<code>CommonJS</code>的模块加载器（例如<code>RequireJS</code>或<code>Browserify</code>），在<code>Node.js</code>中，则只需简单的作为一个<code>CommonJS</code>模块引入<code>Underscore</code>组件。</p>
-<p>访问<code>Underscore</code>对象（其工具函数所附属的对象）的方式取决于函数库的加载方式。当<code>Underscore</code>通过浏览器的<code>script</code>标签所加载，库将自动附属在<code>window._</code>上。如清单16-1所示，对在一般环境下通过模块加载器创建的变量，则可把当前的underscore模块赋值给字符<code>_</code>， 十分方便。</p>
-<p><strong>清单 16-1.</strong> 从<code>Node.js</code>模块中加载<code>Underscore</code>库</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example-001/index.js</span></span><br><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'underscroe'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(_.VERSION);</span><br><span class="line"><span class="comment">// 1.8.2</span></span><br></pre></td></tr></table></figure>
-<p>所有<code>Underscore</code>函数都挂在<code>_</code>（“下划线”）对象上。由于<code>Underscore</code>是一个工具库，除了少量设置以外，它不会保留任何状态（这章节之后会涉及这些内容）。所有函数都是<em>幂等</em>的，也就是说对任意函数多次传递同一个值，每次返回的结果都是相同的。只要<code>Underscore</code>加载了，它就能立即被使用。</p>
-<p><code>Underscore</code>函数操作多以集合（数组和类数组对象，比如<code>argument</code>）、对象字面量及函数为主。<code>Underscore</code>最常用在过滤和数据变换上。许多<code>Underscore</code>函数间是相互补充的，函数间互相作用在一起亦能形成功能强大的组合。由于这种组合使用的方式会很实用，<code>Underscore</code>内置了对函数链式调用的支持，这个功能创建了简洁的管线式操作， 这种管线式操作允许一次进行多个数据转换。</p>
-<h2 id="聚合和索引">聚合和索引</h2><p>集合中的数据经常共享类似结构，然而这些数据具有标识属性，使得每个数据均为唯一在一个数据集合中，为了迅速的的过滤、使用满足匹配聚合条件的对象子集，区分这两类关系—共性和个性—是十分有用的。</p>
-<p>underscore具有若干方法来执行这类任务，但对处理集合来说，则有三个函数能发挥极大的作用：即<code>countBy()</code>,<code>groupBy()</code>,<code>indexBy()</code>。</p>
-<h3 id="countBy()">countBy()</h3><p>对共享一类特征的对象进行计数是归纳数据的常用方式。对一个<code>URL</code>集合，可以设想若干分析过程来判定多少URL属于特定的顶级域名（例如.com, .org, .edu, .etc)。对于这个任务，<code>Underscore</code>的<code>countBy()</code>函数可以说是个理想的选择。它会为数组中的每个元素调用一个回调函数来决定该元素符合哪个类别（本例中即URL属于哪个顶层域名）。回调函数返回了代表该类别的字符串值。最终结果是一个对象，该对象的键代表由回调函数返回的所有类别，而代表每个元素的数量则纳入每个类别。清单16-2展示了这样一个原生实现，其返回了一个对象，该对象带有一个为2的<code>.org</code>域名url数量值，和一个为1的<code>.com</code>域名的url数量值。</p>
-<p><strong>清单 16-2 按某条件对元素计数</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example-002/index.js</span></span><br><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'underscore'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> urls = [</span><br><span class="line">	<span class="string">'http://underscorejs.org'</span>,</span><br><span class="line">	<span class="string">'http://lodash.com'</span>,</span><br><span class="line">	<span class="string">'http://ecmascript.org'</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counts = _.countBy(url, <span class="function"><span class="keyword">function</span> <span class="title">byTLD</span><span class="params">(url)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (url.indexOf(<span class="string">'.com'</span>) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">'.com'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (url.indexOf(<span class="string">'org'</span>) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">'.org'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'?'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(count);</span><br><span class="line"><span class="comment">// &#123; '.org': 2, '.com': 1 &#125;</span></span><br></pre></td></tr></table></figure>
-<p>如果一个集合中每一项都是拥有属性的对象，而且某个特定属性的值代表着需要被统计的数据，就不需要迭代器函数了。取而代之的是，可以把被检测属性的名称作为参数。注意在清单16-3中，最终结果的每一个键都将会是在每个对象上得到检测的那个特定属性的值。</p>
-<p><strong>清单 16-3. 按某属性对元素计数</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example-003/index.js</span></span><br><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'underscore'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> urls = [</span><br><span class="line">	&#123;scheme: <span class="string">'http'</span>, host: <span class="string">'underscore.js'</span>, domain: <span class="string">'.org'</span>&#125;,</span><br><span class="line">	&#123;scheme: <span class="string">'http'</span>, host: <span class="string">'lodash'</span>, domain: <span class="string">'.com'</span>&#125;,</span><br><span class="line">	&#123;scheme: <span class="string">'http'</span>, host: <span class="string">'ecmascript'</span>, domain: <span class="string">'.org'</span>&#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counts = _.countBy(urls, <span class="string">'domain'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(counts);</span><br><span class="line"><span class="comment">// &#123;'.org': 2, '.com': 1&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>若该集合中有一个或多个对象缺少需要被测试的属性，那么最终的结果对象就会包含一个为<code>undefined</code>的键，该键的值是集合中所有缺少该属性的对象总数。</p>
-<h3 id="groupBy()">groupBy()</h3><p><code>Underscore</code>的<code>groupBy()</code>函数与<code>countBy()</code>相似，但不同于把结果归纳为数字形式的计数值，<code>groupBy()</code>在结果对象中把元素放入分类后的集合内。清单16-4中的URL对象都被放在了每个与之对应的顶级域名集合中。</p>
-<p><strong>清单16-4 按某属性为元素分组</strong><br><figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// example-<span class="number">004</span>/index.js</span><br><span class="line"><span class="string">'use strict'</span></span><br><span class="line">var <span class="number">_</span> = <span class="literal">require</span>(<span class="string">'underscore'</span>);</span><br><span class="line"></span><br><span class="line">var urls = [</span><br><span class="line">	<span class="keyword">&#123;</span>scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'underscorejs'</span>, <span class="built_in">domain</span>: <span class="string">'.org'</span><span class="keyword">&#125;</span>,</span><br><span class="line">	<span class="keyword">&#123;</span>scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'lodash'</span>, <span class="built_in">domain</span>: <span class="string">'.com'</span><span class="keyword">&#125;</span>,</span><br><span class="line">	<span class="keyword">&#123;</span>scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'ecmascript'</span>, <span class="built_in">domain</span>: <span class="string">'.org'</span><span class="keyword">&#125;</span>,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">var counts = <span class="number">_</span>.groupBy(urls, <span class="string">'domain'</span>);</span><br><span class="line"></span><br><span class="line">console.log(groupd);</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"><span class="keyword">&#123;</span></span><br><span class="line">	<span class="string">'.org'</span>: [</span><br><span class="line">		<span class="keyword">&#123;</span> scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'underscorejs'</span>, <span class="built_in">domain</span>: <span class="string">'.org'</span> <span class="keyword">&#125;</span>,</span><br><span class="line">		<span class="keyword">&#123;</span> scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'ecmascript'</span>, <span class="built_in">domain</span>: <span class="string">'.org'</span> <span class="keyword">&#125;</span>,</span><br><span class="line">	],</span><br><span class="line">	<span class="string">'.com'</span>: [</span><br><span class="line">		<span class="keyword">&#123;</span> scheme: <span class="string">'http'</span>, <span class="keyword">host</span>: <span class="string">'lodash'</span>, <span class="built_in">domain</span>: <span class="string">'.com&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>注意         在为元素分类时，如果需要对分类元素进行更大程度的控制，<code>groupBy()</code>函数第二个参数也可换成迭代器函数（把属性名参数换掉）。</p>
-</blockquote>
-<p>值得注意的是，只需要通过简单的查询分组后对象中每个分组数组的长度，数量值就能很容易地推导出来。在依赖于应用程序上下文时，相对于使用计数函数，优先选择分组函数会更有利。在表16-5中，可以看到,其不但展示了一个通过<code>groupBy()</code>的计数值结果建立对象的函数，也展示了如何从分组后的数据获取的单一集合的计数值。</p>
-
+        
       
     </div>
     <footer>
@@ -212,7 +89,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-29T04:51:06.000Z"><a href="/2016/03/29/pdf制作/">2016-03-29</a></time>
+        <time datetime="2016-03-29T04:40:39.000Z"><a href="/2016/03/29/pdf制作/">2016-03-29</a></time>
       
       
   
@@ -222,16 +99,16 @@
     </header>
     <div class="entry">
       
-        <h3 id="工具">工具</h3><ul>
+        <h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
 <li><a href="http://www.princexml.com/download/" target="_blank" rel="external">prince</a>自己尝试的众多工具中很好用的一个，其内部自带webkit渲染引擎, 能将html正确排版。但是其版本较老，很多css新特性是不能用的。</li>
 </ul>
-<h3 id="使用">使用</h3><ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
 <li>安装后，使用<code>prince -s index.css index.html -o output.pdf</code>命令分别用于指定css/html/output文件名。</li>
 <li>如果你的html页面很大，不同于一般的a4大小，可以在css中指定页面大小，例如<code>@page { size: 1280px 1780px }</code>。</li>
 </ul>
-<h3 id="注意">注意</h3><ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>其布局方式和css还是有些区别，比如不支持相对定位，负边距等，布局的较好方案是使用<a href="http://www.princexml.com/doc/tables/" target="_blank" rel="external">table</a>,基本不会出现意外bug;</li>
-<li>支持将javacscript代码也转换为pdf，见<a href="http://www.princexml.com/doc/9.0/javascript/" target="_blank" rel="external">link</a><h3 id="其他">其他</h3></li>
+<li>支持将javacscript代码也转换为pdf，见<a href="http://www.princexml.com/doc/9.0/javascript/" target="_blank" rel="external">link</a><br>###其他</li>
 <li><a href="http://www.princexml.com/doc/installing/#installing" target="_blank" rel="external">安装</a></li>
 </ul>
 
@@ -258,51 +135,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-14T06:38:39.000Z"><a href="/2016/03/14/learn-css-property/">2016-03-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/03/14/learn-css-property/">css透视</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><code>perspective-origin</code>:    the vanish point</li>
-<li><code>perspective</code>: lenght</li>
-<li><code>transform-style</code>: 3d</li>
-<li><code>backface-visibility</code>: visible, hidden ,initial</li>
-</ul>
-<h2 id="other_css_properties">other css properties</h2><ul>
-<li><code>border-style</code>: inset (3d border)</li>
-<li><code>justify-content</code>:(subproperty of flexible box layout module)<br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">justify-content</a><br><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox-complete-guide</a></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-03-11T07:58:50.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
+        <time datetime="2016-03-11T04:12:56.000Z"><a href="/2016/03/11/js严格模式/">2016-03-11</a></time>
       
       
   
@@ -312,7 +145,7 @@
     </header>
     <div class="entry">
       
-        <h3 id="javascript_严格模式">javascript 严格模式</h3><ul>
+        <h3 id="javascript-严格模式"><a href="#javascript-严格模式" class="headerlink" title="javascript 严格模式"></a>javascript 严格模式</h3><ul>
 <li>严格模式下，不允许使用 with 语句。只有在执行时才可以确定对象的具体属性，而严格模式在编译时就检查变量，故语法错误。</li>
 <li>严格模式下，this 默认为 undefined。<ul>
 <li>若忘记了使用 new 运算符，则会抛出错误。</li>
@@ -320,17 +153,17 @@
 </ul>
 </li>
 <li><p>禁止在函数内部遍历调用栈。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  f1.caller;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">  f1.arguments;</span><br><span class="line">  <span class="comment">//报错</span></span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function f1() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  f1.caller;</div><div class="line">  //报错</div><div class="line">  f1.arguments;</div><div class="line">  //报错</div><div class="line">&#125;</div><div class="line">f1();</div></pre></td></tr></table></figure>
 </li>
 <li><p>定义重复的属性或重复的参数名。</p>
 </li>
 <li><p>不可以对禁止扩展的对象添加新属性。</p>
-  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(o);</span><br><span class="line">o.v = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object.preventExtensions(o);</div><div class="line">o.v = 1;</div></pre></td></tr></table></figure>
 </li>
 <li><p>不可删除一个不可删除的属性。</p>
 </li>
 <li><p>严格模式下，不允许对 arguments 对象赋值，arguments 不再追踪参数的变化。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//正常模式为 [2, 2]</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line"><span class="pi">  "use strict"</span>;</span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//严格模式 [2, 1]</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function f(a) &#123;</div><div class="line">  a = 2;</div><div class="line">  return [a, arguments[0]];</div><div class="line">&#125;</div><div class="line">f(1);</div><div class="line">//正常模式为 [2, 2]</div><div class="line">function f(a) &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  a = 2;</div><div class="line">  return [a, arguments[0]];</div><div class="line">&#125;</div><div class="line">f(1);</div><div class="line">//严格模式 [2, 1]</div></pre></td></tr></table></figure>
 </li>
 <li><p>函数声明必须在顶层。</p>
 </li>
@@ -373,16 +206,16 @@
     </header>
     <div class="entry">
       
-        <h3 id="特点">特点</h3><ul>
+        <h2 id="特点"><a href="#特点" class="headerlink" title="#特点"></a>#特点</h2><ul>
 <li>组件化方式思考开发方式，易于重用；</li>
 <li>自顶向下渲染</li>
 <li>react主要是一种观念，具有自己的解决问题、工具、库生态系统，</li>
 </ul>
-<h3 id="创新点">创新点</h3><ul>
+<h3 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h3><ul>
 <li>使用观察者模式代替脏值检查（连续不断的检查）</li>
 <li>内存中的虚拟dom树 (spoiler: with shouldComponentUpdate() and ImmutableJS)</li>
 </ul>
-<h3 id="DIFF">DIFF</h3><ul>
+<h3 id="DIFF"><a href="#DIFF" class="headerlink" title="DIFF"></a>DIFF</h3><ul>
 <li><p>层次之间关联</p>
 <ul>
 <li>一般来说，从两个任意树中找出最小修改值复杂度为O(N^3)，而react使用启发式算法在O(N)内寻找最佳相似度；</li>
@@ -408,13 +241,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="事件代理">事件代理</h3><ul>
+<h3 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h3><ul>
 <li>解决了ie8不兼容的事件处理方式；</li>
 <li>根节点唯一个事件监听，当事件触发，浏览器提供了一个target节点，为模拟事件传播，react不会遍历虚拟dom层级；</li>
 <li>每个组件使用唯一id代表整个层级，通过把事件监听者存放在哈希表中，性能提高了（比起附加到虚拟节点上）</li>
 <li>对于每个事件和事件监听器，浏览器都会创建一个事件对象，好处是你可以很方便的<code>引用或修改该对象</code>，坏处是分配了很多内存。react为这些对象分配了一个池，每当需要一个事件对象，就会从池中重用。极大的减少了垃圾回收。</li>
 </ul>
-<h3 id="渲染">渲染</h3><ul>
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
 <li><p>批处理</p>
 <ul>
 <li><p>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</p>
@@ -469,7 +302,7 @@
     </header>
     <div class="entry">
       
-        <h3 id="FIS设计来由_(2014/5)">FIS设计来由 (2014/5)</h3><ul>
+        <h3 id="FIS设计来由-2014-5"><a href="#FIS设计来由-2014-5" class="headerlink" title="FIS设计来由 (2014/5)"></a>FIS设计来由 (2014/5)</h3><ul>
 <li><p><a href="https://github.com/fouber/blog/issues/3" target="_blank" rel="external">fouber-前端工程与性能优化</a></p>
 <blockquote>
 <p>补充</p>
@@ -514,135 +347,48 @@
     </header>
     <div class="entry">
       
-        <h2 id="数据显示">数据显示</h2><h3 id="反应性的更新">反应性的更新</h3><ul>
+        <h2 id="数据显示"><a href="#数据显示" class="headerlink" title="数据显示"></a>数据显示</h2><h3 id="反应性的更新"><a href="#反应性的更新" class="headerlink" title="反应性的更新"></a>反应性的更新</h3><ul>
 <li>JSX语法中<code>props</code>被传递为属性。可将其看作组件中的常量，传入后不要修改它。</li>
 </ul>
-<h3 id="组件类似函数">组件类似函数</h3><ul>
+<h3 id="组件类似函数"><a href="#组件类似函数" class="headerlink" title="组件类似函数"></a>组件类似函数</h3><ul>
 <li>可将其看作带有<code>props</code>和<code>state</code>渲染html的函数。记住这点，组件则很容易理解。  </li>
 </ul>
 <blockquote>
 <p>react只能渲染单一根节点，若想返回多个节点则应将其包裹在一个根节点中。  </p>
 </blockquote>
-<h2 id="JSX语法">JSX语法</h2><ul>
+<h2 id="JSX语法"><a href="#JSX语法" class="headerlink" title="JSX语法"></a>JSX语法</h2><ul>
 <li>html标签使用小写字母标签，react组件使用大写字母开头的标签</li>
 <li>JSX作为js不会改变js的语义，且xml小写属性名应写为js风格的驼峰式：<code>class</code>-<code>className</code>,<code>for</code>-<code>htmlFor</code></li>
 <li>jsx中属性和孩子节点会转换为<code>React.createElement()</code>的参数。</li>
 <li>若想引用所有属性，可事先将其全部添入jsx</li>
-<li>若不知道到底想设置什么属性，可将所有属性存入一个对象，不要改变<code>props</code>,难以检测右值<h2 id="动态交互的UI">动态交互的UI</h2></li>
+<li>若不知道到底想设置什么属性，可将所有属性存入一个对象，不要改变<code>props</code>,难以检测右值<br>##动态交互的UI</li>
 </ul>
-<h3 id="事件绑定｜合成事件">事件绑定｜合成事件</h3><ul>
+<h3 id="事件绑定｜合成事件"><a href="#事件绑定｜合成事件" class="headerlink" title="事件绑定｜合成事件"></a>事件绑定｜合成事件</h3><ul>
 <li>消除浏览器和设备间的差异，同html书写方式相同  </li>
 </ul>
-<h3 id="自动绑定｜事件代理">自动绑定｜事件代理</h3><ul>
+<h3 id="自动绑定｜事件代理"><a href="#自动绑定｜事件代理" class="headerlink" title="自动绑定｜事件代理"></a>自动绑定｜事件代理</h3><ul>
 <li>每个方法自动绑定到组件实例上避免手动维护this</li>
 <li>在顶层使用一个监听器自动监听所有事件；每个事件发生，事件处理程序都能够与该事件映射 </li>
 </ul>
-<h3 id="组件代表状态机">组件代表状态机</h3><ul>
+<h3 id="组件代表状态机"><a href="#组件代表状态机" class="headerlink" title="组件代表状态机"></a>组件代表状态机</h3><ul>
 <li>将UI看做不同的状态并绘制这些状态，很容易保证UI的一致和连续性;只需要更新状态，React将以高效方式更新dom；</li>
 </ul>
-<h3 id="状态机如何工作">状态机如何工作</h3><ul>
+<h3 id="状态机如何工作"><a href="#状态机如何工作" class="headerlink" title="状态机如何工作"></a>状态机如何工作</h3><ul>
 <li><code>setState(data, callback)</code>方法把<code>data</code>合并入<code>this.state</code>中并重绘组件；组件结束重绘后，可选的<code>callback</code>则会被调用。由于React会注意保证UI更新，故一般并不需要提供回调。</li>
 </ul>
-<h3 id="什么样的组件需要状态">什么样的组件需要状态</h3><ul>
+<h3 id="什么样的组件需要状态"><a href="#什么样的组件需要状态" class="headerlink" title="什么样的组件需要状态"></a>什么样的组件需要状态</h3><ul>
 <li>大部分组件要从<code>props</code>中获取数据并渲染它，然而有时需要响应用户输入，服务器请求或时间流逝，此时需要用到状态。</li>
 <li>最好使更多的组件无状态。这样做可以将状态同大部分逻辑脱离并最小化冗余,使应用开发更简便；</li>
 <li>通用的模式是创建一些无状态的组件</li>
 </ul>
-<h3 id="哪些需要状态转换">哪些需要状态转换</h3><ul>
+<h3 id="哪些需要状态转换"><a href="#哪些需要状态转换" class="headerlink" title="哪些需要状态转换"></a>哪些需要状态转换</h3><ul>
 <li>状态需要包含那些可能被组件的事件处理方法更新ui的数据，这类数据一般很小并且是可json序列化的。构建状态的组件时，应思考该状态可能代表的最小含义并将其存储在<code>this.state</code>中。这样，在render函数内就可以简单的对基于该状态的信息进行计算。尽管状态添加了冗余或着可计算的值，意味着需要显示的在语法中而不是依靠react为我们计算它们，使用这种方式来构建应用可以说是最正确的方式。</li>
 </ul>
-<h3 id="哪些不需要状态转换">哪些不需要状态转换</h3><ul>
+<h3 id="哪些不需要状态转换"><a href="#哪些不需要状态转换" class="headerlink" title="哪些不需要状态转换"></a>哪些不需要状态转换</h3><ul>
 <li>计算性的数据：把所有的计算放在<code>render()</code>中可以轻易保证UI的连续性。例如，若要将一段包含在状态中的列表项数组转换为字符串，只需要<code>this.state.listItems.length + &#39; list items&#39;</code>放在render()内而不需要放在<code>state</code>中。</li>
 <li>react组件：在<code>render()</code>中使用底层的属性和状态来构建</li>
 <li>从<code>props</code>中复制而来的数据: 如果可能尽量使用<code>props</code>。由于<code>props</code>会在某段时间之后变化，故唯一有效的可在<code>state</code>中存储<code>props</code>的用法是最好知道它之前的值。</li>
 </ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-07-02T13:45:24.000Z"><a href="/2015/07/02/mac上hexo/">2015-07-02</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/07/02/mac上hexo/">Hexo My Note</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="Preparation：">Preparation：</h3><p><a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p>
-<h3 id="Useful_command:">Useful command:</h3><ul>
-<li>hexo new “my pages”</li>
-<li>npm install (init dependency)</li>
-<li>hexo server / hexo s</li>
-<li>hexo g (generate static pages)</li>
-<li>hexo d (deploy your blog on remote site)</li>
-<li>hexo —help</li>
-</ul>
-<h3 id="configing_site">configing site</h3><p><a href="http://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">config your site</a></p>
-<h3 id="deploy_on_github">deploy on github</h3><p><strong>steps:</strong></p>
-<ol>
-<li><code>sudo npm install -g hexo-deployer-git --save</code></li>
-</ol>
-<h3 id="make_my_own_theme">make my own theme</h3><p>backup tips：</p>
-<ul>
-<li>把整个hexo的文件夹打包 更换环境重新npm install</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-06-16T16:05:57.000Z"><a href="/2015/06/17/js-basic-syntax/">2015-06-17</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/06/17/js-basic-syntax/">js-short-hand</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><code>a || (a = b);</code> //    <code>if (a != 0) a = b;</code><br><code>if([1,2].indexOf(a))</code> // <code>if(a == 1 || a ==2)</code><br><code>~~4.5</code> // <code>Math.floor(4.5)</code></p>
 
       
     </div>
@@ -677,19 +423,21 @@
     </header>
     <div class="entry">
       
-        <h3 id="type_of_boxes">type of boxes</h3><ul>
+        <p>###type of boxes</p>
+<ul>
 <li><code>block-level</code>盒子，其<code>display</code>的<code>used value</code>为<code>block</code>,<code>list-item</code>,<code>table</code>,<code>table-</code>;其顶级非匿名盒子为block－level;可以包含line－box/block-level box中其一，若都包含，则linebox会被匿名盒子包裹；</li>
 <li><code>inline-level</code>: <code>display</code>为<code>inline</code>,<code>inline-block</code>,<code>ruby</code>;</li>
 <li><code>anonymous box</code>:默认值为<code>inheried | initial</code>,当子元素的display不为父元素期待的值，匿名盒子创建；</li>
 </ul>
-<h3 id="flow_root">flow root</h3><p>&gt;<br>The value of ‘float’ is not ‘none’.<br>&gt;<br>The used value of ‘overflow’ is not ‘visible’.<br>&gt;<br>The value of ‘display’ is ‘table-cell’, ‘table-caption’ (see [CSS3TBL]), ‘inline-block’ or ‘inline-table’.<br>&gt;<br>The value of ‘position’ is neither ‘static’ nor ‘relative’ (see [CSS3POS]).<br>&gt;<br>The value of ‘block-progression’ is ‘lr’ or ‘rl’ and the value of ‘block-progression’ of its parent box is ‘tb’<br>&gt;<br>The value of ‘block-progression’ is ‘tb’ and the value of ‘block-progression’ of its parent box is ‘lr’ or ‘rl’.</p>
+<p>###flow root<br>&gt;<br>The value of ‘float’ is not ‘none’.<br>&gt;<br>The used value of ‘overflow’ is not ‘visible’.<br>&gt;<br>The value of ‘display’ is ‘table-cell’, ‘table-caption’ (see [CSS3TBL]), ‘inline-block’ or ‘inline-table’.<br>&gt;<br>The value of ‘position’ is neither ‘static’ nor ‘relative’ (see [CSS3POS]).<br>&gt;<br>The value of ‘block-progression’ is ‘lr’ or ‘rl’ and the value of ‘block-progression’ of its parent box is ‘tb’<br>&gt;<br>The value of ‘block-progression’ is ‘tb’ and the value of ‘block-progression’ of its parent box is ‘lr’ or ‘rl’.</p>
 <ul>
 <li>belong to the flow</li>
 </ul>
 <blockquote>
 <p>The used value of its ‘display’ is ‘block’, ‘list-item’, ‘table’ or <template>.<br>The used value of its ‘float’ is ‘none’.<br>The used value of its ‘position’ is ‘static’ or ‘relative’.<br>It is either a child of the flow root or a child of a box that belong to the flow.</template></p>
 </blockquote>
-<h3 id="values">values</h3><ul>
+<p>###values</p>
+<ul>
 <li><p>每一个属性具有计算的方式，其计算包含三步：specified,computed,actual;  </p>
 </li>
 <li><p>参考资料<br><a href="http://www.w3.org/TR/2001/WD-css3-values-20010713/#specified" target="_blank" rel="external">w3c-css values</a><br><a href="http://www.w3.org/TR/css3-box/#visibility" target="_blank" rel="external">box-module</a></p>
@@ -713,11 +461,164 @@
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-31T05:58:21.000Z"><a href="/2015/05/31/promise笔记/">2015-05-31</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/31/promise笔记/">promise笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-30T11:24:12.000Z"><a href="/2015/05/30/多功能的css-target/">2015-05-30</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/30/多功能的css-target/">多功能的css :target</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>not support: ie8 -  </li>
+<li>:target伪元素的作用不只在于定位一个文章片段时提供高亮以给用户更醒目的提醒，还有其他作用:  </li>
+</ul>
+<h3 id="垂直方向的手风琴效果"><a href="#垂直方向的手风琴效果" class="headerlink" title="垂直方向的手风琴效果"></a>垂直方向的手风琴效果</h3><ul>
+<li>transition: height</li>
+<li>section 及setction:target的高度从仅仅包含标题到包含标题与内容<br><a href="http://codepen.io/kyhwsk/pen/PqWOvz" target="_blank" rel="external">demo</a><h3 id="标签切换效果"><a href="#标签切换效果" class="headerlink" title="标签切换效果"></a>标签切换效果</h3></li>
+<li>h1绝对定位，top为负,作为tab标签；</li>
+<li>section绝对定位,top为默认值0</li>
+<li>改变index，:target2为显示标签，1为默认标签，0为隐藏标签；<br><a href="http://codepen.io/kyhwsk/pen/xGgpEo?editors=110" target="_blank" rel="external">demo</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-24T21:55:49.000Z"><a href="/2015/05/25/just-a-few-notes-on-angular/">2015-05-25</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/25/just-a-few-notes-on-angular/">just a few extracts on angular</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><ul>
+<li>function:<ul>
+<li>angular.moudule: a global place, for register retrieving all modules</li>
+<li>a collection of <code>services</code> <code>directives</code> <code>controllers</code> <code>filters</code> &amp; configuration information</li>
+<li>retrieve / create </li>
+</ul>
+</li>
+<li>type: angular.Module</li>
+</ul>
+<h3 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h3><ul>
+<li>$injector</li>
+<li>$provider<ul>
+<li>service(name, constructor): rigister a service  </li>
+</ul>
+</li>
+</ul>
+<h3 id="directive"><a href="#directive" class="headerlink" title="directive"></a>directive</h3><ul>
+<li>ngClass: string, object</li>
+</ul>
+<h3 id="ng-strict-di"><a href="#ng-strict-di" class="headerlink" title="ng-strict-di"></a>ng-strict-di</h3><ul>
+<li>annotate services</li>
+</ul>
+<h3 id="启动angular"><a href="#启动angular" class="headerlink" title="启动angular"></a>启动angular</h3><ul>
+<li>automatic Initialization<ul>
+<li><code>DOMContentLoaded</code> triggers angular’s initiallize;<ul>
+<li>find ng-app directive;</li>
+<li>load module</li>
+<li>create injector</li>
+<li>treat only a portion of DOM as angular application</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><ul>
+<li>Lazily instantiated – Angular only instantiates a service when an application component depends on it.</li>
+</ul>
+<ul>
+<li>Singletons – Each component dependent on a service gets a reference to the single instance generated by the service factory.</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
 
 <nav id="pagination">
   
   
-    <a href="/page/2/" class="alignright next">下一页</a>
+    <a href="/page/2/" class="alignright next">Nächste Seite</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -730,12 +631,12 @@
 
   
 <div class="widget tag">
-  <h3 class="title">标签</h3>
+  <h3 class="title">Tags</h3>
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
-    <li><a href="/tags/css/">css</a><small>7</small></li>
+    <li><a href="/tags/css/">css</a><small>5</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
@@ -747,7 +648,7 @@
   
     <li><a href="/tags/js/">js</a><small>4</small></li>
   
-    <li><a href="/tags/other/">other</a><small>2</small></li>
+    <li><a href="/tags/other/">other</a><small>1</small></li>
   
     <li><a href="/tags/react-native/">react native</a><small>1</small></li>
   
@@ -763,7 +664,7 @@
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>
@@ -773,7 +674,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2016 k
+  &copy; 2017 k
   
 </div>
 <div class="clearfix"></div></footer>

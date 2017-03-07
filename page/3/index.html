@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 3 页 | k&#39;s Arable Land</title>
+  <title>Seite 3 | k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -55,195 +55,29 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-05-05T16:30:53.000Z"><a href="/2015/05/06/git-problems/">2015-05-06</a></time>
+        <time datetime="2015-04-14T02:46:54.000Z"><a href="/2015/04/14/task0001/">2015-04-14</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/05/06/git-problems/">git problems</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="从远程仓库更新本地文件时，使用git_fetch方法">从远程仓库更新本地文件时，使用git fetch方法</h3><ul>
-<li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
-<li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
-</ul>
-<ol>
-<li><code>git fetch origin branch</code> </li>
-<li><code>git checkout</code>丢弃原本不想改动的文件</li>
-<li><code>git diff</code> view the changes you made relative to the index (staging area for the next commit)</li>
-<li><code>git merge origin/branch</code>在当前分支上合并远程某分支</li>
-</ol>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-05T07:36:27.000Z"><a href="/2015/05/05/javascript性能优化/">2015-05-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/05/javascript性能优化/">javascript性能优化要点</a></h1>
+    <h1 class="title"><a href="/2015/04/14/task0001/">task0001</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="耗时原因">耗时原因</h3><ul>
-<li>每个<code>&lt;script&gt;</code>标签初始下载时都会阻塞页面渲染，且都会因执行脚本而导致一定的延时。</li>
+        <h3 id="using-svg-to-implement-border-radius-in-ie8"><a href="#using-svg-to-implement-border-radius-in-ie8" class="headerlink" title="using svg to implement border-radius in ie8"></a>using svg to implement border-radius in ie8</h3><ul>
+<li>inserting into ie8 after draw a svg image：<a href="https://css-tricks.com/using-svg/">css-tricks</a></li>
 </ul>
-<h3 id="延迟加载方法">延迟加载方法</h3><ul>
-<li>带有 defer 属性的<code>&lt;script&gt;</code>元素是在 onload 事件被触发前被调用。</li>
-<li>async:异步地加载和执行脚本。</li>
-<li><p>动态脚本可以使该脚本文件<strong>当包含该脚本的元素<code>添加到页面</code></strong>之后立刻开始下载，应该注意其他脚本引用此动态脚本时，应该监听该脚本加载的事件保证其他脚本正常运行。代码如下：</p>
+<h3 id="image与父容器间距离问题"><a href="#image与父容器间距离问题" class="headerlink" title="image与父容器间距离问题"></a>image与父容器间距离问题</h3><ul>
+<li><a href="http://stackoverflow.com/questions/21153123/strange-2px-white-area-underneath-of-images-possible-css-error">stack-overflow</a>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2015/05/05/javascript性能优化/#more" class="more-link">Read More</a>
+            <a href="/2015/04/14/task0001/#more" class="more-link">Read More</a>
           </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-05-05T07:36:17.000Z"><a href="/2015/05/05/前端性能优化基础/">2015-05-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/05/05/前端性能优化基础/">前端性能优化基础</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h5 id="@import_url(style-css)书写在style标签内,占用字节少">@import url(style.css)书写在style标签内,占用字节少</h5><h5 id="前端性能优化方法：">前端性能优化方法：</h5><ol>
-<li>css sprite图片精灵，减少http请求数</li>
-<li>启用Gzip压缩</li>
-<li>压缩js、css、html等静态文件</li>
-<li>减少 DNS查找次数 ，延长DNS缓存时间?</li>
-<li>缓存Ajax?</li>
-<li>尽量减少内联样式，使用公共类</li>
-<li>使用<code>DocumentFragments(虚拟节点)</code>或<code>innerHTML(字符串)</code>取代复杂的元素注入（减少DOM操作）</li>
-<li>高频事件防抖:</li>
-</ol>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/05/05/前端性能优化基础/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-01-13T06:37:59.000Z"><a href="/2015/01/13/fed&ued收集/">2015-01-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/01/13/fed&ued收集/">fed&amp;ude</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="fed&amp;ude">fed&amp;ude</h1><ul>
-<li>淘宝 UED <a href="http://ued.taobao.org/blog/" target="_blank" rel="external">http://ued.taobao.org/blog/</a></li>
-<li>阿里妈妈 MUX <a href="http://mux.alimama.com/" target="_blank" rel="external">http://mux.alimama.com/</a><ul>
-<li><a href="http://thx.github.io/" target="_blank" rel="external">http://thx.github.io/</a></li>
-</ul>
-</li>
-<li>天猫前端 <a href="https://github.com/tmallfe/tmallfe.github.io" target="_blank" rel="external">https://github.com/tmallfe/tmallfe.github.io</a><ul>
-<li><a href="http://tmallfe.github.io/" target="_blank" rel="external">http://tmallfe.github.io/</a></li>
-</ul>
-</li>
-<li>百度 FEX <a href="http://fex.baidu.com/" target="_blank" rel="external">http://fex.baidu.com/</a></li>
-<li>百度 EFE <a href="http://efe.baidu.com/" target="_blank" rel="external">http://efe.baidu.com/</a></li>
-<li>百度音乐 <a href="https://github.com/Baidu-Music-FE" target="_blank" rel="external">https://github.com/Baidu-Music-FE</a></li>
-<li>BEFE  <a href="https://github.com/BE-FE" target="_blank" rel="external">https://github.com/BE-FE</a></li>
-<li>ECOM FE <a href="https://github.com/ecomfe" target="_blank" rel="external">https://github.com/ecomfe</a></li>
-<li>贴吧 FE <a href="https://github.com/tbfe" target="_blank" rel="external">https://github.com/tbfe</a></li>
-<li>Baidu Institute of Front－End Technology <a href="https://github.com/baidu-ife" target="_blank" rel="external">https://github.com/baidu-ife</a></li>
-<li>腾讯 ISUX <a href="http://isux.tencent.com/" target="_blank" rel="external">http://isux.tencent.com/</a></li>
-<li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="external">http://www.alloyteam.com/</a></li>
-<li>携程 UED <a href="http://ued.ctrip.com/" target="_blank" rel="external">http://ued.ctrip.com/</a></li>
-<li>百度搜索用户体验中心 <a href="http://ued.baidu.com/" target="_blank" rel="external">http://ued.baidu.com/</a></li>
-<li>手淘前端 <a href="https://github.com/amfe/article" target="_blank" rel="external">https://github.com/amfe/article</a></li>
-<li><a href="http://www.baiduux.com/" target="_blank" rel="external">http://www.baiduux.com/</a> 百度UFO</li>
-<li><a href="http://ued.sohu.com/" target="_blank" rel="external">http://ued.sohu.com/</a> 搜狐UED</li>
-<li><a href="http://ued.taobao.com/" target="_blank" rel="external">http://ued.taobao.com/</a> 淘宝UED</li>
-<li><a href="http://www.ued163.com/" target="_blank" rel="external">http://www.ued163.com/</a> 网易UED</li>
-<li><a href="http://www.uedblog.com/" target="_blank" rel="external">http://www.uedblog.com/</a> YAHOO!CN UED</li>
-<li><a href="http://fed.renren.com/" target="_blank" rel="external">http://fed.renren.com/</a> 人人网FED</li>
-<li><a href="http://cdc.tencent.com/" target="_blank" rel="external">http://cdc.tencent.com/</a> 腾讯CDC</li>
-<li><a href="http://isd.tencent.com/" target="_blank" rel="external">http://isd.tencent.com/</a> 腾讯ISD</li>
-<li><a href="http://www.sndaued.com/" target="_blank" rel="external">http://www.sndaued.com/</a> 盛大UED</li>
-<li><a href="http://ued.koubei.com/" target="_blank" rel="external">http://ued.koubei.com/</a> 雅虎口碑网UED</li>
-<li><a href="http://ued.alipay.com/" target="_blank" rel="external">http://ued.alipay.com/</a> 支付宝UED</li>
-<li><a href="http://www.aliued.cn/" target="_blank" rel="external">http://www.aliued.cn/</a> 阿里巴巴(中文站)UED</li>
-<li><a href="http://www.aliued.com/" target="_blank" rel="external">http://www.aliued.com/</a> 阿里巴巴(国际站)UED</li>
-<li><a href="http://www.alisoftued.com/" target="_blank" rel="external">http://www.alisoftued.com/</a> 阿里软件UED</li>
-<li><a href="http://www.the9ued.com/" target="_blank" rel="external">http://www.the9ued.com/</a> The9 UED</li>
-<li>Clouda team <a href="https://github.com/Clouda-team" target="_blank" rel="external">https://github.com/Clouda-team</a></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
         
         
       
@@ -260,7 +94,7 @@
 
 <nav id="pagination">
   
-    <a href="/page/2/" class="alignleft prev">上一页</a>
+    <a href="/page/2/" class="alignleft prev">Vorherige Seite</a>
   
   
   <div class="clearfix"></div>
@@ -274,12 +108,12 @@
 
   
 <div class="widget tag">
-  <h3 class="title">标签</h3>
+  <h3 class="title">Tags</h3>
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
-    <li><a href="/tags/css/">css</a><small>7</small></li>
+    <li><a href="/tags/css/">css</a><small>5</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
@@ -291,7 +125,7 @@
   
     <li><a href="/tags/js/">js</a><small>4</small></li>
   
-    <li><a href="/tags/other/">other</a><small>2</small></li>
+    <li><a href="/tags/other/">other</a><small>1</small></li>
   
     <li><a href="/tags/react-native/">react native</a><small>1</small></li>
   
@@ -307,7 +141,7 @@
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>
@@ -317,7 +151,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2016 k
+  &copy; 2017 k
   
 </div>
 <div class="clearfix"></div></footer>

@@ -64,16 +64,16 @@
     </header>
     <div class="entry">
       
-        <h3 id="特点">特点</h3><ul>
+        <h2 id="特点"><a href="#特点" class="headerlink" title="#特点"></a>#特点</h2><ul>
 <li>组件化方式思考开发方式，易于重用；</li>
 <li>自顶向下渲染</li>
 <li>react主要是一种观念，具有自己的解决问题、工具、库生态系统，</li>
 </ul>
-<h3 id="创新点">创新点</h3><ul>
+<h3 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h3><ul>
 <li>使用观察者模式代替脏值检查（连续不断的检查）</li>
 <li>内存中的虚拟dom树 (spoiler: with shouldComponentUpdate() and ImmutableJS)</li>
 </ul>
-<h3 id="DIFF">DIFF</h3><ul>
+<h3 id="DIFF"><a href="#DIFF" class="headerlink" title="DIFF"></a>DIFF</h3><ul>
 <li><p>层次之间关联</p>
 <ul>
 <li>一般来说，从两个任意树中找出最小修改值复杂度为O(N^3)，而react使用启发式算法在O(N)内寻找最佳相似度；</li>
@@ -99,13 +99,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="事件代理">事件代理</h3><ul>
+<h3 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h3><ul>
 <li>解决了ie8不兼容的事件处理方式；</li>
 <li>根节点唯一个事件监听，当事件触发，浏览器提供了一个target节点，为模拟事件传播，react不会遍历虚拟dom层级；</li>
 <li>每个组件使用唯一id代表整个层级，通过把事件监听者存放在哈希表中，性能提高了（比起附加到虚拟节点上）</li>
 <li>对于每个事件和事件监听器，浏览器都会创建一个事件对象，好处是你可以很方便的<code>引用或修改该对象</code>，坏处是分配了很多内存。react为这些对象分配了一个池，每当需要一个事件对象，就会从池中重用。极大的减少了垃圾回收。</li>
 </ul>
-<h3 id="渲染">渲染</h3><ul>
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
 <li><p>批处理</p>
 <ul>
 <li><p>每当在一个组件上调用<code>setState</code>，react将标记为<code>dirty</code>，<code>事件循环</code>结束后，一次性重绘所有脏节点（原生js很难做到这一点）。</p>
@@ -165,7 +165,7 @@
 
 <section id="comment">
 
-  <h1 class="title">留言</h1>
+  <h1 class="title">Kommentare</h1>
 
 
 
@@ -205,12 +205,12 @@ var duoshuoQuery = {short_name:"kyhwsk"};
 
   
 <div class="widget tag">
-  <h3 class="title">标签</h3>
+  <h3 class="title">Tags</h3>
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
-    <li><a href="/tags/css/">css</a><small>7</small></li>
+    <li><a href="/tags/css/">css</a><small>5</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
   
@@ -222,7 +222,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
   
     <li><a href="/tags/js/">js</a><small>4</small></li>
   
-    <li><a href="/tags/other/">other</a><small>2</small></li>
+    <li><a href="/tags/other/">other</a><small>1</small></li>
   
     <li><a href="/tags/react-native/">react native</a><small>1</small></li>
   
@@ -238,7 +238,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>
@@ -248,7 +248,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2016 k
+  &copy; 2017 k
   
 </div>
 <div class="clearfix"></div></footer>
