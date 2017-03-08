@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Seite 2 | k&#39;s Arable Land</title>
+  <title>Page 2 | k&#39;s Arable Land</title>
   <meta name="author" content="k">
   
   <meta name="description" content="discover more">
@@ -49,7 +49,7 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -65,21 +65,18 @@
     </header>
     <div class="entry">
       
-        <p>###任务目标：</p>
-<ul>
+        <h3 id="任务目标："><a href="#任务目标：" class="headerlink" title="任务目标："></a>任务目标：</h3><ul>
 <li>给定地址显示图像</li>
 <li>图像可拖拽</li>
 <li>图像可缩放</li>
 </ul>
-<p>###具体目标：</p>
-<ul>
+<h3 id="具体目标："><a href="#具体目标：" class="headerlink" title="具体目标："></a>具体目标：</h3><ul>
 <li>在输入框内填入地址，地址正确图像正常显示，否则显示错误提示信息</li>
 <li>鼠标移入图像显示拖拽光标，此时可以将图像拖拽到任意位置</li>
 <li>鼠标移入图像边缘：（上下左右，四个角）可以显示不同方向光标，根据提示可以将图像在不同方向上放大缩小，拖拽和缩放同一时刻只能执行一种</li>
 <li>可以在一个页面中创建多个这样的图像查看器</li>
 </ul>
-<p>###实现思路</p>
-<ul>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><ul>
 <li>目标一：判断图像是否正常加载使用<code>onload</code> &amp; <code>onerror</code>判断</li>
 <li><p>目标二：</p>
 <ul>
@@ -108,8 +105,7 @@
 </ul>
 </li>
 </ul>
-<p>###demo</p>
-<ul>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><ul>
 <li>使用原生<code>javascript</code>，选择器等基本操作使用自己书写的小型工具库；</li>
 <li>demo链接：<a href="http://fordawn.in/demo/360/imageviewer">链接</a></li>
 </ul>
@@ -131,7 +127,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -147,28 +143,24 @@
     </header>
     <div class="entry">
       
-        <p>###一、概念</p>
-<p><code>Formatting Context:</code>某块内容的渲染方式。</p>
+        <h3 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h3><p><code>Formatting Context:</code>某块内容的渲染方式。</p>
 <pre><code>页面内一块独立渲染的区域，其中元素以某方式独立渲染。
 
  1. Block方式;
  2. Inline方式；
-</code></pre><p>###二、<code>Block Formatting Context</code>渲染规则:</p>
-<ol>
+</code></pre><h3 id="二、Block-Formatting-Context渲染规则"><a href="#二、Block-Formatting-Context渲染规则" class="headerlink" title="二、Block Formatting Context渲染规则:"></a>二、<code>Block Formatting Context</code>渲染规则:</h3><ol>
 <li>内部的Box会在垂直方向，一个接一个地放置。</li>
 <li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠<br>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
 <li>BFC的区域不会float box重叠。</li>
 <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
 <li>一块以BFC方式渲染的区域的高度，浮动元素也参与计算</li>
 </ol>
-<p>###三、5条规则的<strong>示例&amp;应用</strong>：</p>
-<ol>
+<h3 id="三、5条规则的示例-amp-应用："><a href="#三、5条规则的示例-amp-应用：" class="headerlink" title="三、5条规则的示例&amp;应用："></a>三、5条规则的<strong>示例&amp;应用</strong>：</h3><ol>
 <li>自适应两栏布局；</li>
 <li>清楚内部浮动；</li>
 <li>防止垂直margin重叠；</li>
 </ol>
-<p>###四、使用BFC方式独立渲染某块区域的方式：</p>
-<ol>
+<h3 id="四、使用BFC方式独立渲染某块区域的方式："><a href="#四、使用BFC方式独立渲染某块区域的方式：" class="headerlink" title="四、使用BFC方式独立渲染某块区域的方式："></a>四、使用BFC方式独立渲染某块区域的方式：</h3><ol>
 <li>根元素</li>
 <li>float: ^none</li>
 <li>position：absolute｜fixed</li>
@@ -194,7 +186,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -256,7 +248,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -297,7 +289,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -313,8 +305,7 @@
     </header>
     <div class="entry">
       
-        <p>###从远程仓库更新本地文件时，使用git fetch方法</p>
-<ul>
+        <h3 id="从远程仓库更新本地文件时，使用git-fetch方法"><a href="#从远程仓库更新本地文件时，使用git-fetch方法" class="headerlink" title="从远程仓库更新本地文件时，使用git fetch方法"></a>从远程仓库更新本地文件时，使用git fetch方法</h3><ul>
 <li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
 <li><a href="http://rogerdudler.github.io/git-guide/" target="_blank" rel="external">reference </a></li>
 </ul>
@@ -342,7 +333,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -377,7 +368,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -421,7 +412,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -473,7 +464,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -489,9 +480,7 @@
     </header>
     <div class="entry">
       
-        <p>#####@import url(style.css)书写在style标签内,占用字节少</p>
-<p>#####前端性能优化方法：</p>
-<ol>
+        <h3 id="import-url-style-css-书写在style标签内-占用字节少"><a href="#import-url-style-css-书写在style标签内-占用字节少" class="headerlink" title="##@import url(style.css)书写在style标签内,占用字节少"></a>##@import url(style.css)书写在style标签内,占用字节少</h3><h3 id="前端性能优化方法："><a href="#前端性能优化方法：" class="headerlink" title="##前端性能优化方法："></a>##前端性能优化方法：</h3><ol>
 <li>css sprite图片精灵，减少http请求数</li>
 <li>启用Gzip压缩</li>
 <li>压缩js、css、html等静态文件</li>
@@ -522,7 +511,7 @@
 
 
 
-  <article class="post">
+  <article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -538,12 +527,10 @@
     </header>
     <div class="entry">
       
-        <p>###耗时原因</p>
-<ul>
+        <h3 id="耗时原因"><a href="#耗时原因" class="headerlink" title="耗时原因"></a>耗时原因</h3><ul>
 <li>每个<code>&lt;script&gt;</code>标签初始下载时都会阻塞页面渲染，且都会因执行脚本而导致一定的延时。</li>
 </ul>
-<p>###延迟加载方法</p>
-<ul>
+<h3 id="延迟加载方法"><a href="#延迟加载方法" class="headerlink" title="延迟加载方法"></a>延迟加载方法</h3><ul>
 <li>带有 defer 属性的<code>&lt;script&gt;</code>元素是在 onload 事件被触发前被调用。</li>
 <li>async:异步地加载和执行脚本。</li>
 <li><p>动态脚本可以使该脚本文件<strong>当包含该脚本的元素<code>添加到页面</code></strong>之后立刻开始下载，应该注意其他脚本引用此动态脚本时，应该监听该脚本加载的事件保证其他脚本正常运行。代码如下：</p>
@@ -571,10 +558,10 @@
 
 <nav id="pagination">
   
-    <a href="/" class="alignleft prev">Vorherige Seite</a>
+    <a href="/" class="alignleft prev">Prev</a>
   
   
-    <a href="/page/3/" class="alignright next">Nächste Seite</a>
+    <a href="/page/3/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -591,6 +578,8 @@
   <ul class="entry">
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
+  
+    <li><a href="/tags/Psychology/">Psychology</a><small>1</small></li>
   
     <li><a href="/tags/css/">css</a><small>5</small></li>
   
@@ -620,7 +609,7 @@
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>

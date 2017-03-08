@@ -48,7 +48,7 @@
   <div class="clearfix"></div>
 </div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post markdown-body">
   
   <div class="post-content">
     <header>
@@ -64,12 +64,10 @@
     </header>
     <div class="entry">
       
-        <p>###耗时原因</p>
-<ul>
+        <h3 id="耗时原因"><a href="#耗时原因" class="headerlink" title="耗时原因"></a>耗时原因</h3><ul>
 <li>每个<code>&lt;script&gt;</code>标签初始下载时都会阻塞页面渲染，且都会因执行脚本而导致一定的延时。</li>
 </ul>
-<p>###延迟加载方法</p>
-<ul>
+<h3 id="延迟加载方法"><a href="#延迟加载方法" class="headerlink" title="延迟加载方法"></a>延迟加载方法</h3><ul>
 <li>带有 defer 属性的<code>&lt;script&gt;</code>元素是在 onload 事件被触发前被调用。</li>
 <li>async:异步地加载和执行脚本。</li>
 <li><p>动态脚本可以使该脚本文件<strong>当包含该脚本的元素<code>添加到页面</code></strong>之后立刻开始下载，应该注意其他脚本引用此动态脚本时，应该监听该脚本加载的事件保证其他脚本正常运行。代码如下：</p>
@@ -122,7 +120,7 @@
 
 <section id="comment">
 
-  <h1 class="title">Kommentare</h1>
+  <h1 class="title">Comments</h1>
 
 
 
@@ -167,6 +165,8 @@ var duoshuoQuery = {short_name:"kyhwsk"};
   
     <li><a href="/tags/Performance/">Performance</a><small>2</small></li>
   
+    <li><a href="/tags/Psychology/">Psychology</a><small>1</small></li>
+  
     <li><a href="/tags/css/">css</a><small>5</small></li>
   
     <li><a href="/tags/demo/">demo</a><small>1</small></li>
@@ -195,7 +195,7 @@ var duoshuoQuery = {short_name:"kyhwsk"};
 
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:fordawn.in">
   </form>
 </div>
